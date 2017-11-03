@@ -18,8 +18,7 @@ try{
 	die();
 }
 
-
 $mysql = new PDO("mysql:host=".$host, $username, $password);
-$mysql->exec("USE databaseName");
+$mysql->exec('USE 17ac3d07');
 
 ?>
