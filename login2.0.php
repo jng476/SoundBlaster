@@ -5,7 +5,7 @@ $host = "silva.computing.dundee.ac.uk";
 //$password = "cba123";
 $database = "17ac3d07";
 //will change to getting the user name and password 
-
+session_start();
 
 try{
 
@@ -13,15 +13,19 @@ try{
 	
 } catch (PDOException $e){
 	// Could not connect
+	
+	$_SESSION['login'] = "incorrect user-name or password";
 	echo "Database Connection Error!";
 	var_dump($e);
-	header("Location: login.html");
+	header("Location: login.php");
 	die();
 }
 
 $mysql = new PDO("mysql:host=".$host, $_POST['username'], $_POST['password']);
 
 $mysql->exec('USE 17ac3d07');
+
+$_SESSION['login'] = "Logged in";
 
 header("Location: searchTable.php");
 exit();

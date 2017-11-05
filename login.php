@@ -1,7 +1,6 @@
 <?php 
-
 include 'connect.php';
-
+session_start();
 if(isset($_SESSION['login'])){
 	if($_SESSION['login'] == "Logged in"){
 			
@@ -9,6 +8,7 @@ if(isset($_SESSION['login'])){
 		
 	}
 }
+
 ?> 
 
 
@@ -33,9 +33,9 @@ if(isset($_SESSION['login'])){
 				<label for "password">Password</label>
 				<input type="password" class="form-control" size="35" name="password"><br/>
 			</div>
+				<input type="submit" value="Login">
 				<?php if(isset($_SESSION['login'])){ ?>
 				<td> <?php echo $_SESSION['login']; session_destroy();} ?> </td>
-				<input type="submit" value="Login">
 			</form>
 		</div>
 	</body>
