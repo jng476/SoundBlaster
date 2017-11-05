@@ -1,11 +1,10 @@
 <?php 
-include 'connect.php';
 session_start();
 if(isset($_SESSION['login'])){
 	if($_SESSION['login'] == "Logged in"){
 			
 		header("Location: searchTable.php");
-		
+		exit();
 	}
 }
 
@@ -14,7 +13,7 @@ if(isset($_SESSION['login'])){
 
 <html>
 	<head>
-  <title>Bootstrap Example</title>
+  <title>SoundBlaster Login</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,7 +34,7 @@ if(isset($_SESSION['login'])){
 			</div>
 				<input type="submit" value="Login">
 				<?php if(isset($_SESSION['login'])){ ?>
-				<td> <?php echo $_SESSION['login']; session_destroy();} ?> </td>
+				<td style='colour:red;'> <?php echo  $_SESSION['login']; session_destroy();} ?> </td>
 			</form>
 		</div>
 	</body>

@@ -26,6 +26,7 @@ $mysql = new PDO("mysql:host=".$host, $_POST['username'], $_POST['password']);
 $mysql->exec('USE 17ac3d07');
 
 $_SESSION['login'] = "Logged in";
+$_SESSION['username']=$_POST['username'];
 
 header("Location: searchTable.php");
 exit();
