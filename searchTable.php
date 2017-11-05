@@ -1,7 +1,8 @@
 <?php
 
 include 'connect.php';
-$query = "SELECT * FROM product";
+$table=$_POST['table'];
+$query = "SELECT * FROM $table";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 

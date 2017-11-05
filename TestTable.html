@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<?php
+
+include 'connect.php';
+try{
+	$table=$_POST['table'];
+}catch (PDOException $e){
+	
+}
+$query = "SELECT * FROM $table";
+$stmt = $mysql->prepare($query);
+$stmt->execute();
+
+?>
+
+<html>
+	<head>
+  <title>Bootstrap Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Search</h2>
+			<form method="post" action="TestTable.html">
+				<div class="form-group">
+				<label for "table">Table</label>
+				<input type="text" calss="form-control" size="35" name="table"><br/>
+			</div>
+				<input type="submit" value="Search">
+			</form>
+		</div>
+		<table>
+		<thead>
+			<td>ID</td>
+			<td>SupplierID</td>
+			<td>CategoryID</td>
+			<td>Name</td>
+			<td>Description</td>
+			<td>Brand</td>
+			<td>SupplierCost</td>
+			<td>OnlinePrice</td>
+		</thead>
+		
+		<tbody>
+			<?php foreach($stmt->fetchAll() as $result): ?>
+			<tr>
+				<td><?php echo $result['ID']; ?></td>
+				<td><?php echo $result['SupplierID']; ?></td>
+				<td><?php echo $result['CategoryID']; ?></td>
+				<td><?php echo $result['Name']; ?></td>
+				<td><?php echo $result['Description']; ?></td>
+				<td><?php echo $result['Brand']; ?></td>
+				<td><?php echo $result['SupplierCost']; ?></td>
+				<td><?php echo $result['OnlinePrice']; ?></td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+
+	</table>
+	</body>
+</html>
