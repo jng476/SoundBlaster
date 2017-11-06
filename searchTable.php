@@ -1,10 +1,12 @@
 <?php
 
 include 'connect.php';
+
 if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
-}
+} 
+
 $where = "WHERE ";
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if($_POST['id'] != ''){
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 	if($_POST['name'] != ''){
 		
-		$where = $where." Name = ".$_POST['name']." AND ";
+		$where = $where." Name LIKE '%".$_POST['name']."%' AND ";
 	}
 	if($_POST['brand'] != ''){
 		
@@ -28,14 +30,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 	if($_POST['price'] != ''){
 		
-		$where = $where." OnlinePrice = ".$_POST['price']." AND ";
+		$where = $where." OnlinePrice <= ".$_POST['price']." AND ";
 	}
 	
-	$where = $where."TRUE";
-} else {
-	$where = $where."TRUE = TRUE";
+	
 	
 }
+
+$where = $where."TRUE = TRUE ";
+
+if (isset($_POST['priceSort'])){
+	if($_POST['priceSort'] == 'Yes'){
+		
+		$where = $where."ORDER BY OnlinePrice";
+		
+	}
+	
+}
+
 $query = "SELECT * FROM product $where";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
@@ -58,17 +70,19 @@ $stmt->execute();
 			<form method="post" action="searchTable.php">
 				<div class="form-group">
 				<label for "id">ID</label>
-				<input type="text" calss="form-control" size="35" name="id"><br/>
+				<input type="text" class="form-control" size="10" name="id"><br/>
 				<label for "supplier">SupplierID</label>
-				<input type="text" calss="form-control" size="35" name="supplier"><br/>
+				<input type="text" class="form-control" size="10" name="supplier"><br/>
 				<label for "category">CategoryID</label>
-				<input type="text" calss="form-control" size="35" name="category"><br/>
+				<input type="text" class="form-control" size="10" name="category"><br/>
 				<label for "name">Name</label>
-				<input type="text" calss="form-control" size="35" name="name"><br/>
+				<input type="text" class="form-control" size="10" name="name"><br/>
 				<label for "brand">Brand</label>
-				<input type="text" calss="form-control" size="35" name="brand"><br/>
-				<label for "price">Price</label>
-				<input type="text" calss="form-control" size="35" name="price"><br/>
+				<input type="text" class="form-control" size="10" name="brand"><br/>
+				<label for "price">Max Price</label>
+				<input type="text" class="form-control" size="10" name="price"><br/>
+				<label for "priceSort">Sort by Price</label>
+				<input type="checkbox" name="priceSort" value="Yes"><br/>
 			</div>
 				<input type="submit" value="Search">
 			</form>
@@ -85,7 +99,6 @@ $stmt->execute();
 			<td>Name</td>
 			<td>Description</td>
 			<td>Brand</td>
-			<td>SupplierCost</td>
 			<td>OnlinePrice</td>
 		</thead>
 		
@@ -98,7 +111,6 @@ $stmt->execute();
 				<td><?php echo $result['Name']; ?></td>
 				<td><?php echo $result['Description']; ?></td>
 				<td><?php echo $result['Brand']; ?></td>
-				<td><?php echo $result['SupplierCost']; ?></td>
 				<td><?php echo $result['OnlinePrice']; ?></td>
 			</tr>
 			<?php endforeach; ?>

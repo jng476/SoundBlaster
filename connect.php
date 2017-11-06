@@ -1,7 +1,12 @@
 <?php	
-
+SESSION_START();
 $host = "silva.computing.dundee.ac.uk";
-$username = "17ac3u07";
+if(!isset($_SESSION['username'])){
+	header("Location: login.php");
+	die();
+	
+}
+$username = $_SESSION['username'];
 $password = "cba123";
 $database = "17ac3d07";
 //will change to getting the user name and password 
