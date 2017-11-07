@@ -33,11 +33,12 @@ if(isset($_SESSION['login'])){
 					
 					<br/>
 					<br/>
+					<div id="part1">
 					<h2><u> HOME </u></h2>
 					<br/>
 					<p> Welcome to the online store of SoundBlaster! <br/>
 						Our store offers a range of products for musical playback. We stock a variety of playback options, including headphones, earphones and speakers <br/>  </p>
-					<a href="login.php">Log In</a></li>
+					</div>
 					<br/>
 					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
