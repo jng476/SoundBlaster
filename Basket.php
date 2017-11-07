@@ -4,20 +4,30 @@
             public $isAlive = true;
             public $ID;
             public $amount;
-			public $count=0;
+			public $index=0;
             
             // Assigning the values
             public function __construct($ID, $amount) {
-              $this->ID[$this->count] = $ID;
-              $this->amount[$this->count] = $amount;
-			  $this->count = $this->count + 1;
+              $this->ID[$this->index] = $ID;
+              $this->amount[$this->index] = $amount;
+			  $this->index = $this->index + 1;
+			  echo "NewONE".$ID;
             }
             
             // Creating a method (function tied to an object)
             public function add($ID, $amount) {
-			  $this->ID[$this->count] = $ID;
-              $this->amount[$this->count] = $amount;
-			  $this->count = $this->count + 1;
+				$isthere = false;
+			  for($i=0; $i<$this->index; $i++){
+				  if($this->ID[$i] == $ID){
+					  $this->amount[$i] = $this->amount[$i] + $amount;
+					  $isthere = true;
+				  }
+			  }
+			  if($isthere == false){
+			  $this->ID[$this->index] = $ID;
+              $this->amount[$this->index] = $amount;
+			  $this->index = $this->index + 1;
+			  }
             }
 			
           }
