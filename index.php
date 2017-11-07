@@ -12,6 +12,7 @@ if(isset($_SESSION['login'])){
 <html>
 	<head>
 		<title>SoundBlaster Store</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 		<?php include 'scripts.html'?>
 	</head>
 	<body>
@@ -19,7 +20,7 @@ if(isset($_SESSION['login'])){
 				
 				
 		<div id="container">
-						
+					
 			<div id="nav">
  				<?php include 'navigation.php'; ?>
 			</div>

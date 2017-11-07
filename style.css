@@ -1,0 +1,22 @@
+body {
+    background-image:    url(crowd2.jpg);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;              /* optional, center the image */
+}
+
+#nav 
+{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    background-color: black;
+    overflow: hidden;
+    display: block;
+    margin: auto;
+}
+
+.navbar-brand
+{
+	font-size: 60px;
+}

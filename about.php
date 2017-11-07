@@ -12,6 +12,7 @@ if(isset($_SESSION['login'])){
 <html>
 	<head>
 		<title>SoundBlaster About</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 		<?php include 'scripts.html'?>
 	</head>
 	<body>
