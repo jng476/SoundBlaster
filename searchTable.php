@@ -7,7 +7,7 @@ if($_SESSION['login']!="Logged in"){
 } 
 
 $where = "WHERE ";
-if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+if (isset($_GET['id'])){
 	if($_GET['id'] != ''){
 	$where = $where."id = ".$_GET['id']." AND ";
 	}
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 $where = $where."TRUE = TRUE ";
 
 if (isset($_GET['priceSort'])){
-	if($_POST['priceSort'] == 'Yes'){
+	if($_GET['priceSort'] == 'Yes'){
 		
 		$where = $where."ORDER BY OnlinePrice";
 		
