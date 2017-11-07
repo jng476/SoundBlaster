@@ -25,7 +25,7 @@ if (isset($_GET['id'])){
 	}
 	if($_GET['brand'] != ''){
 		
-		$where = $where." Brand = ".$_GET['brand']." AND ";
+		$where = $where." Brand LIKE '%".$_GET['brand']."%' AND ";
 	}
 	if($_GET['price'] != ''){
 		
