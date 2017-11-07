@@ -1,36 +1,35 @@
 <?php
 
 include 'connect.php';
-
 if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 } 
 
 $where = "WHERE ";
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-	if($_POST['id'] != ''){
-	$where = $where."id = ".$_POST['id']." AND ";
+if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+	if($_GET['id'] != ''){
+	$where = $where."id = ".$_GET['id']." AND ";
 	}
-	if($_POST['supplier'] != ''){
+	if($_GET['supplier'] != ''){
 		
-		$where = $where." SupplierID = ".$_POST['supplier']." AND ";
+		$where = $where." SupplierID = ".$_GET['supplier']." AND ";
 	}
-	if($_POST['category'] != ''){
+	if($_GET['category'] != ''){
 		
-		$where = $where." CategoryID = ".$_POST['category']." AND ";
+		$where = $where." CategoryID = ".$_GET['category']." AND ";
 	}
-	if($_POST['name'] != ''){
+	if($_GET['name'] != ''){
 		
-		$where = $where." Name LIKE '%".$_POST['name']."%' AND ";
+		$where = $where." Name LIKE '%".$_GET['name']."%' AND ";
 	}
-	if($_POST['brand'] != ''){
+	if($_GET['brand'] != ''){
 		
-		$where = $where." Brand = ".$_POST['brand']." AND ";
+		$where = $where." Brand = ".$_GET['brand']." AND ";
 	}
-	if($_POST['price'] != ''){
+	if($_GET['price'] != ''){
 		
-		$where = $where." OnlinePrice <= ".$_POST['price']." AND ";
+		$where = $where." OnlinePrice <= ".$_GET['price']." AND ";
 	}
 	
 	
@@ -39,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $where = $where."TRUE = TRUE ";
 
-if (isset($_POST['priceSort'])){
+if (isset($_GET['priceSort'])){
 	if($_POST['priceSort'] == 'Yes'){
 		
 		$where = $where."ORDER BY OnlinePrice";
@@ -67,7 +66,7 @@ $stmt->execute();
 	<body>
 		<div class="container">
 			<h2>Search</h2>
-			<form method="post" action="searchTable.php">
+			<form method="get" action="searchTable.php">
 				<div class="form-group">
 				<label for "id">ID</label>
 				<input type="text" class="form-control" size="10" name="id"><br/>
@@ -94,15 +93,17 @@ $stmt->execute();
 		<table>
 		<thead>
 			<td>ID</td>
-			<td>SupplierID</td>
-			<td>CategoryID</td>
+			<td>SupID</td>
+			<td>CatID</td>
 			<td>Name</td>
-			<td>Description</td>
+			<td>Des</td>
 			<td>Brand</td>
-			<td>OnlinePrice</td>
+			<td>Price</td>
+			<td>Amount</td>
 		</thead>
 		
 		<tbody>
+		<form method="post" action="addBasket.php">
 			<?php  foreach($stmt->fetchAll() as $result): ?>
 			<tr>
 				<td><?php echo $result['ID']; ?></td>
@@ -112,8 +113,11 @@ $stmt->execute();
 				<td><?php echo $result['Description']; ?></td>
 				<td><?php echo $result['Brand']; ?></td>
 				<td><?php echo $result['OnlinePrice']; ?></td>
+				<td><input type="text" class="form-control" size="10" name="amount[<?php echo $result['ID'] ?>]"><br/></td>
+				<td><input type="submit" value="Add To Basket"></td>
 			</tr>
 			<?php endforeach; ?>
+		</form>
 		</tbody>
 		</div>
 	</table>
