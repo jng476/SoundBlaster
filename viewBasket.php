@@ -2,7 +2,10 @@
 
 include 'Basket.php';
 include 'connect.php';
-$basket = $_SESSION['Basket'];
+if($_SESSION['login']!="Logged in"){
+	header("Location: login.php");
+	die();
+}
 ?> 
 
 <html>
@@ -23,7 +26,7 @@ $basket = $_SESSION['Basket'];
 		</thead>
 		
 		<tbody?>
-			<?php for($i=0; $i<$_SESSION['Basket']->index; $i++){ ?>
+			<?php if(isset($_SESSION['Basket'])){ for($i=0; $i<$_SESSION['Basket']->index; $i++){ ?>
 			<tr>
 				<?php $query = "SELECT Name, OnlinePrice FROM product WHERE ID = ".$_SESSION['Basket']->ID[$i];
 					  $stmt = $mysql->prepare($query);
@@ -35,7 +38,7 @@ $basket = $_SESSION['Basket'];
 				<td><?php echo $result['OnlinePrice']; ?></td>
 			</tr>
 			<?php endforeach; ?>
-			<?php } ?>
+			<?php } } ?>
 			</tbody>
 			</div>
 		</table>

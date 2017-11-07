@@ -22,8 +22,17 @@
               <a class="nav-link" href="contact_us.php">Contact</a>
             </li>
 			<li class="nav-item">
-              <a class="nav-link" href="basket.php">My Basket</a>
+              <a class="nav-link" href="viewBasket.php">My Basket</a>
             </li>
+			<?php if(!isset($_SESSION['login'])){ ?>
+			<li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
+			<?php } else{ ?>
+			<li class="nav-item">
+              <a class="nav-link" href="logout.php">Logout</a>
+            </li>
+			<?php } ?>
           </ul>
         </div>
       </div>

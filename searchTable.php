@@ -111,11 +111,23 @@ $stmt->execute();
 				<td><?php echo $result['Name']; ?></td>
 				<td><?php echo $result['Description']; ?></td>
 				<td><?php echo $result['Brand']; ?></td>
-				<td><?php echo $result['OnlinePrice']; ?></td>
-				<td><input type="text" class="form-control" size="10" name="amount[<?php echo $result['ID'] ?>]"><br/></td>
-				<td><input type="submit" value="Add To Basket"></td>
+				<td><?php echo "£".$result['OnlinePrice']; ?></td>
+				<td><select name="amount[<?php echo $result['ID'] ?>]">
+					<option value=""> </option>
+					<option value=0>0</option>
+					<option value=1>1</option>
+					<option value=2>2</option>
+					<option value=3>3</option>
+					<option value=4>4</option>
+					<option value=5>5</option>
+					<option value=6>6</option>
+					<option value=7>7</option>
+					<option value=8>8</option>
+					<option value=9>9</option>
+				</select></td>
 			</tr>
 			<?php endforeach; ?>
+			<td><input type="submit" value="Add To Basket"></td>
 		</form>
 		</tbody>
 		</div>
