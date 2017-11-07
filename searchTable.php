@@ -84,9 +84,6 @@ $stmt->execute();
 			</div>
 				<input type="submit" value="Search">
 			</form>
-			<form method="post" action="logout.php">
-				<input type="submit" value="Logout">
-			</form>
 		</div>
 		<div class="container">
 		<table>
