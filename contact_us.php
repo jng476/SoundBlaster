@@ -11,7 +11,7 @@ if(isset($_SESSION['login'])){
 
 <html>
 	<head>
-		<title>SoundBlaster Store</title>
+		<title>SoundBlaster Contact</title>
 		<?php include 'scripts.html'?>
 	</head>
 	<body>
@@ -21,7 +21,7 @@ if(isset($_SESSION['login'])){
 		<div id="container">
 						
 			<div id="nav">
- 				<?php include 'navigation.php';  echo 'blah' ?>
+ 				<?php include 'navigation.php'; ?>
 			</div>
 			
 			

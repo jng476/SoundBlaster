@@ -21,7 +21,7 @@ if(isset($_SESSION['login'])){
 		<div id="container">
 						
 			<div id="nav">
- 				<?php include 'navigation.php';  echo 'blah' ?>
+ 				<?php include 'navigation.php'; ?>
 			</div>
 			
 			
@@ -32,7 +32,7 @@ if(isset($_SESSION['login'])){
 					
 					<br/>
 					<br/>
-					<h2><u> SOUNDBLASTER </u></h2>
+					<h2><u> HOME </u></h2>
 					<br/>
 					<p> Welcome to the online store of SoundBlaster! <br/>
 						Our store offers a range of products for musical playback. We stock a variety of playback options, including headphones, earphones and speakers <br/>  </p>

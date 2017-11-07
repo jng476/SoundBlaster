@@ -16,10 +16,13 @@
               <a class="nav-link" href="searchTable.php">Shop</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="about.php">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact_us.php">Contact</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="basket.php">My Basket</a>
             </li>
           </ul>
         </div>
