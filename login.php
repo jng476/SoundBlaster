@@ -18,9 +18,6 @@ if(isset($_SESSION['login'])){
 <html>
     <head>
         <title>SoundBlaster Login</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
 		<?php include 'scripts.html'?>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
@@ -33,11 +30,8 @@ if(isset($_SESSION['login'])){
 			<div id="nav">
  				<?php include 'navigation.php'; ?>
 			</div>
-			
-			
-			<div id="content">
-				
-				
+						
+			<div id="content">								
 				<div id="main">
 				</br>
 				</br>
@@ -45,17 +39,7 @@ if(isset($_SESSION['login'])){
 				<h2>Login</h2>
 				<form method="post" action="login2.0.php">
 				<div class="form-group">
-=======
-        <?php include 'scripts.html'?>
-    </head>
-    <body>
-        <?php include 'navigation.php' ?>
-        <div class="container">
-            <h2>Login</h2>
-            <form method="post" action="login2.0.php">
-                <div class="form-group">
->>>>>>> origin/master
-                    <label for "username">Username</label>
+				<label for "username">Username</label>
                     <input type="text" calss="form-control" size="35" name="username"><br/>
                 </div>
                 <div class="form-group">
@@ -64,7 +48,11 @@ if(isset($_SESSION['login'])){
                 </div>
                 <input type="submit" value="Login">
                     <td> <?php echo "<font color='red'>".$error."</font>"; ?> </td>
-            </form>
-        </div>
+				</form>
+				</div>
+        
+        
+				</div>
+			</div>
     </body>
 </html>
