@@ -34,18 +34,21 @@ SESSION_START();
 					
 					<br/>
 					<br/>
+					<div id="bubbleText">
 					<h2><u> Contact Us </u></h2>
 					<br/>
 					<p> If you have any queries or complaint you can contact us here: <br/>
 						this_email_does_not_exist@hotmail.com <br/>  </p>
+					</div>
+					<br/>
 					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
-					
-					
 					<br/>
+					<div id="bubbleText">
 					<p> 
 						Should you experience problems with this website, please contact the website administrators, Team 7!						
 					</p>
+					</div>
 					<br/>
 					<br/>
 					
