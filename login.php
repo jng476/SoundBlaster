@@ -36,7 +36,7 @@ if(isset($_SESSION['login'])){
                     <input type="password" class="form-control" size="35" name="password"><br/>
                 </div>
                 <input type="submit" value="Login">
-                    <td style='colour:red;'> <?php echo  $error; ?> </td>
+                    <td> <?php echo "<font color='red'>".$error."</font>"; ?> </td>
             </form>
         </div>
     </body>
