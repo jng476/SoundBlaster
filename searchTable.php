@@ -56,15 +56,21 @@ $stmt->execute();
 
 <html>
 	<head>
-  <title>Search Table</title>
+		<title>Search Table</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php include 'scripts.html'?>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
-		<?php include 'navigation.php' ?>
+		
+		
 		<div class="container">
+			
+			<div id="nav">
+ 				<?php include 'navigation.php'; ?>
+			</div>
+			
+			</br>
 			<h2>Search</h2>
 			<form method="get" action="searchTable.php">
 				<div class="form-group">
@@ -86,7 +92,9 @@ $stmt->execute();
 				<input type="submit" value="Search">
 			</form>
 		</div>
+		
 		<div class="container">
+		
 		<table>
 		<thead>
 			<td>ID</td>
@@ -127,7 +135,8 @@ $stmt->execute();
 			<td><input type="submit" value="Add To Basket"></td>
 		</form>
 		</tbody>
+		</table>
 		</div>
-	</table>
+		
 	</body>
 </html>

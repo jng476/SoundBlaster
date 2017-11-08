@@ -13,18 +13,17 @@ SESSION_START();
 <html>
 	<head>
 		<title>SoundBlaster About</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
 		<?php include 'scripts.html'?>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		
-				
+		<div id="nav">
+ 				<?php include 'navigation.php'; ?>
+			</div>	
 				
 		<div id="container">
 						
-			<div id="nav">
- 				<?php include 'navigation.php'; ?>
-			</div>
 			
 			
 			<div id="content">

@@ -13,8 +13,8 @@ SESSION_START();
 <html>
 	<head>
 		<title>SoundBlaster Contact</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
 		<?php include 'scripts.html'?>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		
@@ -49,8 +49,7 @@ SESSION_START();
 						Should you experience problems with this website, please contact the website administrators, Team 7!						
 					</p>
 					</div>
-					<br/>
-					<br/>
+					
 					
 				</div>
 			</div>
@@ -58,6 +57,10 @@ SESSION_START();
 			<div id="footer">
 				Created in 2017 by Team 7
 			</div>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 		</div>
 	</body>
 </html>
