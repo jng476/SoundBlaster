@@ -111,7 +111,6 @@ $stmt->execute();
 				<td><?php echo "£".$result['OnlinePrice']; ?></td>
 				<td><select name="amount[<?php echo $result['ID'] ?>]">
 					<option value=""> </option>
-					<option value=0>0</option>
 					<option value=1>1</option>
 					<option value=2>2</option>
 					<option value=3>3</option>
