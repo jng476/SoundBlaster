@@ -1,12 +1,14 @@
-<?php
-session_start();
+<?php 
+
 if(isset($_SESSION['login'])){
-    if($_SESSION['login'] == "Logged in"){
-        header("Location: searchTable.php");
-        exit();
-    }
+	if($_SESSION['login'] == "Logged in"){
+			
+		header("Location: about.php");
+		
+	}
 }
-?>
+SESSION_START();
+?> 
 
 <html>
 	<head>
@@ -58,4 +60,3 @@ if(isset($_SESSION['login'])){
 			</div>
 		</div>
 	</body>
-	</html>
