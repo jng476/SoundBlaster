@@ -13,28 +13,29 @@ SESSION_START();
 <html>
 	<head>
 		<title>SoundBlaster Store</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
 		<?php include 'scripts.html'?>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		
-				
+			
 				
 		<div id="container">
 					
-			<div id="nav">
- 				<?php include 'navigation.php'; ?>
-			</div>
+			
 			
 			
 			<div id="content">
 				
+				<div id="nav">
+ 				<?php include 'navigation.php'; ?>
+			</div>		
 				
 				<div id="main">
 					
 					<br/>
 					<br/>
-					<div id="part1">
+					<div id="bubbleText">
 					<h2><u> HOME </u></h2>
 					<br/>
 					<p> Welcome to the online store of SoundBlaster! <br/>
@@ -43,7 +44,7 @@ SESSION_START();
 					<br/>
 					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
-					
+					<div id="bubbleText">
 					<p> You must be signed in to view our products and make an order!<br/>
 					    Existing Customer? You can Login here:
 					    <a href="login.php">Click to Log In</a></li><br/>
@@ -57,6 +58,7 @@ SESSION_START();
 					<p> 
 						Should you experience problems with this website, please contact the website administrators, Team 7!						
 					</p>
+					</div>
 					<br/>
 					<br/>
 					

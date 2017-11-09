@@ -24,8 +24,8 @@ h1, h2, h3
 	margin: auto;
 }
 
-#part1 {
-	background-color: rgba(0, 0, 0, 0.2);
+#bubbleText {
+	background-color: rgba(100, 100, 255, 0.2);
 	text-align: center;
     float: center;
     border-radius: 25px;
@@ -34,6 +34,13 @@ h1, h2, h3
     max-width: 90%;
 	margin: 5%
 }
+
+table#basketTable {
+    
+	background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
 
 #main 
 {
