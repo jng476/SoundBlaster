@@ -7,7 +7,11 @@ if(isset($_SESSION['login'])){
 		
 	}
 }
+
+
 SESSION_START();
+
+
 ?> 
 
 <html>
@@ -17,8 +21,7 @@ SESSION_START();
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
-		
-			
+	
 				
 		<div id="container">
 					
@@ -35,6 +38,7 @@ SESSION_START();
 					
 					<br/>
 					<br/>
+					
 					<div id="bubbleText">
 					<h2><u> HOME </u></h2>
 					<br/>
