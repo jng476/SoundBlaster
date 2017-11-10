@@ -11,12 +11,14 @@ try{
     global $mysql;
 	$mysql = new PDO("mysql:host=".$host.";dbname=".$database, $username, $password);
     #$mysql->exec('USE 17ac3d07');
-    $result=$mysql->query('SELECT * FROM useraccount where username="'.$_POST['username'].'"')->fetch(PDO::FETCH_ASSOC);
+    $prepared = $mysql->prepare('SELECT * FROM useraccount where username= :username AND password = :password');
+    $prepared->bindParam(':username', $_POST['username']);
+    $prepared->bindParam(':password', $_POST['password']);
+    $prepared->execute();
     
-    if ($result['password'] == $_POST['password']) {
+    if ($prepared->rowCount() != 0) {
     $_SESSION['login'] = "Logged in";
     $_SESSION['username']=$_POST['username'];
-
     header("Location: searchTable.php");
     }
     else {
