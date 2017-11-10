@@ -3,7 +3,7 @@ session_start();
 $error = "";
 if(isset($_SESSION['login'])){
     if($_SESSION['login'] == "Logged in"){
-        header("Location: searchTable.php");
+        header("Location: index.php");
         exit();
     }
     else{
