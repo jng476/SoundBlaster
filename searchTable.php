@@ -67,7 +67,7 @@ $stmt->execute(); ?>
 
                         </br>
                         <h2>Search</h2>
-			<h3><?php  ?></h3>
+			
 						<div id="bubbleText">
                         <form method="get" action="searchTable.php" id="searchForm">
                             <div class="form-group">

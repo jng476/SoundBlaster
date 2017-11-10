@@ -1,4 +1,13 @@
 <!-- Navigation -->
+
+<?php 
+if(isset($_GET['searchName']))
+{
+	// redirect if fulfilled
+	header("Location:searchTable.php?id=&supplier=&category=&name=".$_GET['searchName']."&brand=&price=");
+}
+?>
+	
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.php">SoundBlaster</a>
@@ -54,9 +63,24 @@
 					
 				</ul>
 			</li>
-
 			<?php } ?>
-          </ul>
+			<li class="nav-item">
+					<form class="navbar-form navbar-left">
+					<div class="input-group">
+					<input type="text" class="form-control" name="searchName" method="get" placeholder="Search">
+					<div class="input-group-btn">
+					<button class="btn btn-default" type="submit">
+					<i class="glyphicon glyphicon-search"></i>
+					</button>
+					</div>
+					</div>
+					</form> 
+			</li>
+			
+			</ul>
+				
+    
         </div>
       </div>
 </nav>
+

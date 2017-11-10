@@ -10,7 +10,7 @@ body {
 #nav 
 {
     text-align: center;
-    font-size: 30px;
+    font-size: 22px;
     color: white;
     background-color: black;
     overflow: hidden;
@@ -77,3 +77,6 @@ table#resultTable {
 	color: white;
 	text-align: right;
 }
+
+
+
