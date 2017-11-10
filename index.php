@@ -1,14 +1,5 @@
 <?php 
 
-if(isset($_SESSION['login'])){
-	if($_SESSION['login'] == "Logged in"){
-			
-		header("Location: index.php");
-		
-	}
-}
-
-
 SESSION_START();
 
 
@@ -48,6 +39,7 @@ SESSION_START();
 					<br/>
 					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
+					<?php if(!ISSET($_SESSION['login'])){ ?>
 					<div id="bubbleText">
 					<p> You must be signed in to view our products and make an order!<br/>
 					    Existing Customer? You can Login here:
@@ -57,7 +49,7 @@ SESSION_START();
 						
 						 
 					</p>
-					
+					<?php } ?>
 					<br/>
 					<p> 
 						Should you experience problems with this website, please contact the website administrators, Team 7!						

@@ -36,7 +36,7 @@ if($_SESSION['login']!="Logged in"){
 					<div id="bubbleText">
 						<h2><u> Basket </u></h2>
 						</br>
-						<table id="basketTable">
+						<table id="basketTable" style="width:50%" align="centre">
 						<thead>
 						<td>Name</td>
 						<td>Quantity</td>
@@ -53,7 +53,7 @@ if($_SESSION['login']!="Logged in"){
 							<?php foreach($stmt->fetchAll() as $result): ?>
 							<td><?php echo $result['Name']; ?></td>
 							<td><?php echo $_SESSION['Basket']->amount[$i]; ?></td>
-							<td><?php echo $result['OnlinePrice']; ?></td>
+							<td> £:<?php echo $result['OnlinePrice']; ?></td>
 							</tr>
 						<?php endforeach; ?>
 						<?php } } ?>
@@ -62,9 +62,11 @@ if($_SESSION['login']!="Logged in"){
 					</div>
 				</div>
 			</div>
-			<form method="post" action="searchTable.php">
-				<input type="submit" value="Back">
+			<?php if(ISSET($_SESSION['Basket'])){ ?>
+			<form method="post" action="Checkout.php">
+				<input type="submit" value="Checkout">
 			</form>
+			<?php }?>
 			
 			
 		</div>

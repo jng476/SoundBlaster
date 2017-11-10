@@ -9,6 +9,12 @@ function generateRandomString($length = 10) {
     }
     return $randomString;
 }
+if(!isset($_SESSION['basket'])){
+	
+	header("Location: index.php");
+	exit();
+	
+}
 $TrackingId = generateRandomString();
 include 'Basket.php';
 include 'connect.php';
@@ -31,4 +37,6 @@ for($i =0; $i<$_SESSION['Basket']->index; $i++){
 	$stmt->execute();
 }
 unset($_SESSION['Basket']);
+header("Location: index.php");
+exit();
 ?> 
