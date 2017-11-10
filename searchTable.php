@@ -11,13 +11,9 @@ if (isset($_GET['id'])){
     if($_GET['id'] != ''){
         $where = $where."id = ".$_GET['id']." AND ";
     }
-    if($_GET['supplier'] != ''){
-
-        $where = $where." SupplierID = ".$_GET['supplier']." AND ";
-    }
     if($_GET['category'] != ''){
 
-        $where = $where." CategoryID = ".$_GET['category']." AND ";
+        $where = $where." category.ID = ".$_GET['category']." AND ";
     }
     if($_GET['name'] != ''){
 
@@ -45,7 +41,8 @@ if (isset($_GET['priceSort'])){
     }
 }
 
-$query = "SELECT * FROM product $where";
+$query = "SELECT product.ID, product.Name, product.Description, product.Brand, product.OnlinePrice, category.name AS Cat FROM product
+INNER JOIN category on category.ID = product.categoryID $where";
 $stmt = $mysql->prepare($query);
 $stmt->execute(); ?>
 
@@ -72,11 +69,21 @@ $stmt->execute(); ?>
                         <form method="get" action="searchTable.php" id="searchForm">
                             <div class="form-group">
                                 <label for "id">ID</label>
-                                <input type="text" class="form-control" size="10" name="id"><br/>
-                                <label for "supplier">SupplierID</label>
-                                <input type="text" class="form-control" size="10" name="supplier"><br/>
-                                <label for "category">CategoryID</label>
-                                <input type="text" class="form-control" size="10" name="category"><br/>
+                                <input type="text" class="form-control" name="id"><br/>
+								<label for "category">Category</label>
+								<select name="category" class ="form-control">
+                                    <option value=""> </option>
+                                    <option value=1>earphones</option>
+                                    <option value=2>headphones</option>
+                                    <option value=3>speakers</option>
+                                    <option value=4>Bluetooth speaker</option>
+                                    <option value=5>LED cube speaker</option>
+                                    <option value=6>BoomBox speaker</option>
+                                    <option value=7>Multiroom Speaker</option>
+                                    <option value=8>Subwoofer</option>
+                                    <option value=9>Radio</option>
+									<option value=10>Record Player</option>
+                                </select><br/>
                                 <label for "name">Name</label>
                                 <input type="text" class="form-control" size="10" name="name"><br/>
                                 <label for "brand">Brand</label>
@@ -84,7 +91,7 @@ $stmt->execute(); ?>
                                 <label for "price">Max Price</label>
                                 <input type="text" class="form-control" size="10" name="price"><br/>
                                 <label for "priceSort">Sort by Price</label>
-                                <input type="checkbox" name="priceSort" value="Yes"><br/>
+                                <input type="checkbox" name="priceSort" value="Yes" ><br/>
                             </div>
                             <input type="submit" value="Search">
                         </form>
@@ -93,11 +100,10 @@ $stmt->execute(); ?>
 
         <div class="container">
 		<div id="bubbleText">
-            <table id="resultTable">
+            <table id="resultTable" style="width:110%" align="centre">
                 <thead>
                     <td>ID</td>
-                    <td>SupID</td>
-                    <td>CatID</td>
+                    <td>Cat</td>
                     <td>Name</td>
                     <td>Des</td>
                     <td>Brand</td>
@@ -110,8 +116,7 @@ $stmt->execute(); ?>
                         <?php  foreach($stmt->fetchAll() as $result): ?>
                             <tr>
                                 <td><?php echo $result['ID']; ?></td>
-                                <td><?php echo $result['SupplierID']; ?></td>
-                                <td><?php echo $result['CategoryID']; ?></td>
+                                <td><?php echo $result['Cat']; ?></td>
                                 <td><?php echo $result['Name']; ?></td>
                                 <td><?php echo $result['Description']; ?></td>
                                 <td><?php echo $result['Brand']; ?></td>
