@@ -17,15 +17,16 @@
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="searchTable.php">All</a></li>
-					<li><a href="searchTable.php">Earphones</a></li>
-					<li><a href="searchTable.php">Headphones</a></li>
-					<li><a href="searchTable.php">Stereo Speakers</a></li>
-					<li><a href="searchTable.php">Bluetooth Speakers</a></li>
-					<li><a href="searchTable.php">LED Cube Speakers</a></li>
-					<li><a href="searchTable.php">Multi-Room Systems</a></li>
-					<li><a href="searchTable.php">Subwoofers</a></li>
-					<li><a href="searchTable.php">Radios</a></li>
-					<li><a href="searchTable.php">Record Players</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=1&name=&brand=&price=">Earphones</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=2&name=&brand=&price=">Headphones</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=3&name=&brand=&price=">Stereo Speakers</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=4&name=&brand=&price=">Bluetooth Speakers</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=5&name=&brand=&price=">LED Cube Speakers</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=6&name=&brand=&price=">Boombox Speakers</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=7&name=&brand=&price=">Multi-Room Systems</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=8&name=&brand=&price=">Subwoofers</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=9&name=&brand=&price=">Radios</a></li>
+					<li><a href="searchTable.php?id=&supplier=&category=10&name=&brand=&price=">Record Players</a></li>
 				</ul>
 			</li>
 			

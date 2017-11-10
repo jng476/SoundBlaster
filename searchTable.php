@@ -67,8 +67,9 @@ $stmt->execute(); ?>
 
                         </br>
                         <h2>Search</h2>
-			<h3><?php echo $query  ?></h3>
-                        <form method="get" action="searchTable.php">
+			<h3><?php  ?></h3>
+						<div id="bubbleText">
+                        <form method="get" action="searchTable.php" id="searchForm">
                             <div class="form-group">
                                 <label for "id">ID</label>
                                 <input type="text" class="form-control" size="10" name="id"><br/>
@@ -87,11 +88,12 @@ $stmt->execute(); ?>
                             </div>
                             <input type="submit" value="Search">
                         </form>
+						</div>
         </div>
 
         <div class="container">
-
-            <table>
+		<div id="bubbleText">
+            <table id="resultTable">
                 <thead>
                     <td>ID</td>
                     <td>SupID</td>
@@ -132,6 +134,7 @@ $stmt->execute(); ?>
                     </form>
                 </tbody>
             </table>
+			</div>
         </div>
 
     </body>
