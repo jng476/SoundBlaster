@@ -33,11 +33,23 @@ h1, h2, h3
     padding: 20px;
     max-width: 90%;
 	margin: 5%
+	
+}
+form#searchForm{
+	
+	color: white;
+	
 }
 
 table#basketTable {
     
 	background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+table#resultTable {
+    
+	
     color: white;
 }
 

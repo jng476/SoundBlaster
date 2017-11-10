@@ -1,20 +1,26 @@
 <?php
 include 'connect.php';
 
-if (!isset($table)) {
-    die("need to set the \$table variable");
+if (!isset($query)) {
+    die("need to set the \$query variable");
 }
 
-$query = "SELECT * FROM $table";
+
+
 $stmt = $mysql->prepare($query);
+if(isset($bindVars)) :
+    foreach ($bindVars as $key -> $val){
+        stmt->bindParam($key,$value);
+    }
+}
 $stmt->execute();
 
 $tableRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $tableColumns=[];
 for ($i=0 ; $i < $stmt -> columnCount(); $i++) {
-$colDetails = $stmt->getColumnMeta($i);
-array_push($tableColumns, $colDetails['name']);
+    $colDetails = $stmt->getColumnMeta($i);
+    array_push($tableColumns, $colDetails['name']);
 }
 ?>
 <body>
@@ -36,11 +42,10 @@ array_push($tableColumns, $colDetails['name']);
          <?php foreach ($tableColumns as $column): ?>
        <th><?php echo $row[$column] ?></th>
 <?php endforeach; ?>
-<?php endforeach; ?>        
+<?php endforeach; ?>
        </tbody>
        </table>
        </div>
        </div>
        </div>
 </body>
-       
