@@ -42,17 +42,12 @@ if (isset($_GET['priceSort'])){
     if($_GET['priceSort'] == 'Yes'){
 
         $where = $where."ORDER BY OnlinePrice";
-
     }
-
 }
 
 $query = "SELECT * FROM product $where";
 $stmt = $mysql->prepare($query);
-$stmt->execute();
-
-
-?>
+$stmt->execute(); ?>
 
 <html>
     <head>
@@ -72,6 +67,7 @@ $stmt->execute();
 
                         </br>
                         <h2>Search</h2>
+			<h3><?php echo $query  ?></h3>
                         <form method="get" action="searchTable.php">
                             <div class="form-group">
                                 <label for "id">ID</label>
