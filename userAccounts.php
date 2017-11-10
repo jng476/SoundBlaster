@@ -6,7 +6,8 @@ if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 }
-$query = "SELECT * FROM customer WHERE ID = ".$_GET['ID'];
+$query = "SELECT customer.*, address.Line1, address.Line2 FROM customer
+JOIN address ON address.ID = customer.AddressID WHERE customer.ID = ".$_GET['ID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 
@@ -57,7 +58,7 @@ $stmt->execute();
 							<td><?php echo $result['ID']; ?></td>
 							<td><?php echo $result['FirstName']; ?></td>
 							<td><?php echo $result['LastName']; ?></td>
-							<td><?php echo $result['Address']; ?></td>
+							<td><?php echo $result['Line1']." ".$result['Line2']; ?></td>
 							<td><?php echo $result['Email']; ?></td>
 							</tr>
 						<?php endforeach; ?>
