@@ -1,10 +1,6 @@
 <?php	
 SESSION_START();
 $host = "silva.computing.dundee.ac.uk";
-if(!isset($_SESSION['username'])){
-	header("Location: login.php");
-	die();	
-}
 $username = "17ac3u07";
 $password = "cba123";
 $database = "17ac3d07";
