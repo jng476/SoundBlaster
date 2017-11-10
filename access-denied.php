@@ -1,0 +1,1 @@
+<?php echo 'You do not have the correct permissions for this page'  ?>

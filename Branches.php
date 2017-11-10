@@ -1,10 +1,11 @@
 <?php 
 // https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewSupplier.php?supplierID=1 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+
+$permissions = array(
+    "branch"=>"0"
+);
+include 'check_authorisation.php';
 $query = "SELECT * FROM branch";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
@@ -18,12 +19,8 @@ $stmt->execute();
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		
 	</head>
-	<body>
-		
-				
-				
-		<div id="container">
-						
+	<body>				
+		<div id="container">						
 			<div id="nav">
  				<?php include 'navigation.php'; ?>
 			</div>
