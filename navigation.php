@@ -48,7 +48,7 @@
 				<a class="nav-link" data-toggle="dropdown" href="#">Account &#9660
 				<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="#">Orders</a></li>
+					<li><a href="https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewOrder.php#">Orders</a></li>
 					<li><a href="#">Setting</a></li>
 					<li><a href="logout.php">Logout</a></li>
 					
@@ -60,4 +60,3 @@
         </div>
       </div>
 </nav>
-
