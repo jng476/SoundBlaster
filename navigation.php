@@ -11,10 +11,24 @@
               <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="searchTable.php">Shop</a>
-            </li>
+            </li>         			
+			<li class="dropdown">
+				<a class="nav-link" data-toggle="dropdown" href="searchTable.php">Shop &#9660
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="searchTable.php">All</a></li>
+					<li><a href="searchTable.php">Earphones</a></li>
+					<li><a href="searchTable.php">Headphones</a></li>
+					<li><a href="searchTable.php">Stereo Speakers</a></li>
+					<li><a href="searchTable.php">Bluetooth Speakers</a></li>
+					<li><a href="searchTable.php">LED Cube Speakers</a></li>
+					<li><a href="searchTable.php">Multi-Room Systems</a></li>
+					<li><a href="searchTable.php">Subwoofers</a></li>
+					<li><a href="searchTable.php">Radios</a></li>
+					<li><a href="searchTable.php">Record Players</a></li>
+				</ul>
+			</li>
+			
             <li class="nav-item">
               <a class="nav-link" href="about.php">About</a>
             </li>
@@ -29,11 +43,20 @@
               <a class="nav-link" href="login.php">Login</a>
             </li>
 			<?php } else{ ?>
-			<li class="nav-item">
-              <a class="nav-link" href="logout.php">Logout</a>
-            </li>
+			<li class="dropdown">
+				<a class="nav-link" data-toggle="dropdown" href="#">Account &#9660
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Orders</a></li>
+					<li><a href="#">Setting</a></li>
+					<li><a href="logout.php">Logout</a></li>
+					
+				</ul>
+			</li>
+
 			<?php } ?>
           </ul>
         </div>
       </div>
 </nav>
+
