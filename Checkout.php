@@ -9,15 +9,15 @@ function generateRandomString($length = 10) {
     }
     return $randomString;
 }
-if(!isset($_SESSION['basket'])){
+include 'Basket.php';
+include 'connect.php';
+if(!isset($_SESSION['Basket'])){
 	
 	header("Location: index.php");
 	exit();
 	
 }
 $TrackingId = generateRandomString();
-include 'Basket.php';
-include 'connect.php';
 if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();

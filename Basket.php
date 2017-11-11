@@ -29,7 +29,24 @@
 			  $this->index = $this->index + 1;
 			  }
             }
-			
+			public function update($ID, $amount) {
+				for($i=0; $i<$this->index; $i++){
+					if($i == $ID){
+						if($amount != 0){
+							$this->amount[$i] = $amount;
+						} else{
+							if($i<$this-index){
+								for($j=$i; $j<$this->index; $j++){
+									$this->ID[$j] = $this->ID[$j+1];
+									$this->amount[$j] = $this->amount[$j+1];
+								}
+							}
+							$this->index= $this->index -1;
+						}
+					}
+					
+				}
+			}
           }
 		  
         ?>
