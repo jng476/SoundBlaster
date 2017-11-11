@@ -6,7 +6,7 @@ if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 }
-$query = "SELECT customer.*, address.Line1, address.Line2 FROM customer
+$query = "SELECT customer.*, GROUP_CONCAT(address.Line1, address.Line2) AS Address FROM customer
 JOIN address ON address.ID = customer.AddressID WHERE customer.ID = ".$_GET['ID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();
@@ -39,7 +39,7 @@ $stmt->execute();
 					</br>
 					
 					<div id="bubbleText">
-					<table>
+					<table style="width:100%">
 					<thead>
 						<h2><u>  </u></h2>
 						</br>
@@ -58,7 +58,7 @@ $stmt->execute();
 							<td><?php echo $result['ID']; ?></td>
 							<td><?php echo $result['FirstName']; ?></td>
 							<td><?php echo $result['LastName']; ?></td>
-							<td><?php echo $result['Line1']." ".$result['Line2']; ?></td>
+							<td><?php echo $result['Address']; ?></td>
 							<td><?php echo $result['Email']; ?></td>
 							</tr>
 						<?php endforeach; ?>
