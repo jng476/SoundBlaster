@@ -5,7 +5,7 @@ if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 }
-$query = "SELECT customer.*, address.LINE1, address.LINE2, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM customer 
+$query = "SELECT customer.*, address.LINE1, address.LINE2, address.PostCode, address.Country, address.City, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM customer 
 JOIN useraccount on useraccount.customerid = customer.id
 INNER JOIN address on address.ID = customer.AddressID 
 where username = '".$_SESSION['username']."'";
@@ -51,7 +51,7 @@ $stmt->execute();
     <td>FirstName: <?php echo $result['FirstName']?></td>
    <?php } ?>
    <?php if(isset($_GET['edit'])){ ?>
-    <form method="post" action="addBasket.php">
+    <form method="post" action="UpdateAccount.php">
     <td>FirstName: <input type="text" class="form-control" name="FirstName" value="<?php echo $result['FirstName']?>"> </td>
    <?php } ?>
   </tr>
@@ -75,6 +75,33 @@ $stmt->execute();
 	
    <?php } ?>
   </tr>
+  <tr>
+	<?php if(!isset($_GET['edit'])){ ?>
+    <td>PostCode: <?php echo $result['PostCode']?></td>
+	<?php } ?>
+	<?php if(isset($_GET['edit'])){ ?>
+    <td>PostCode: <input type="text" class="form-control" name="PostCode" value="<?php echo $result['PostCode']?>"> </td>
+   <?php } ?>
+  </tr>
+  <tr>
+  <tr>
+	<?php if(!isset($_GET['edit'])){ ?>
+    <td>City: <?php echo $result['City']?></td>
+	<?php } ?>
+	<?php if(isset($_GET['edit'])){ ?>
+    <td>City: <input type="text" class="form-control" name="City" value="<?php echo $result['City']?>"> </td>
+   <?php } ?>
+  </tr>
+  <tr>
+  <tr>
+	<?php if(!isset($_GET['edit'])){ ?>
+    <td>Country: <?php echo $result['Country']?></td>
+	<?php } ?>
+	<?php if(isset($_GET['edit'])){ ?>
+    <td>Country: <input type="text" class="form-control" name="Country" value="<?php echo $result['Country']?>"> </td>
+   <?php } ?>
+  </tr>
+  <tr>
   <tr>
 	<?php if(!isset($_GET['edit'])){ ?>
     <td>Email: <?php echo $result['Email']?></td>
