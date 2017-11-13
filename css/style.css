@@ -35,30 +35,31 @@ h1, h2, h3
 	margin: 5%
 	
 }
-form#searchForm{
-	
+form#searchForm{	
 	color: white;
-	
+}
+
+.page-list {
+	margin:auto
+}
+
+.table-container {
+	background-color: rgba(255,255,255,0.9);
+	margin:auto;
 }
 
 table#basketTable {
-    
 	background-color: rgba(0, 0, 0, 0.2);
     color: white;
 }
 
 table#resultTable {
-    
-	
     color: white;
 }
 
 
 #main 
 {
-	
-
-	
 	background-color: rgba(0, 0, 0, 0);
 	
     font-size: 20px;
@@ -70,8 +71,7 @@ table#resultTable {
 }
 
 #footer
-{
-	
+{	
 	clear: both;
 	padding: 10px;
 	color: white;

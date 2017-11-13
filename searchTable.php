@@ -1,15 +1,10 @@
 <?php
 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-    header("Location: login.php");
-    die();
-}
-
 $where = "WHERE ";
 if (isset($_GET['id'])){
     if($_GET['id'] != ''){
-        $where = $where."id = ".$_GET['id']." AND ";
+        $where = $where."product.id = ".$_GET['id'];
     }
     if($_GET['category'] != ''){
 
@@ -27,12 +22,19 @@ if (isset($_GET['id'])){
 
         $where = $where." OnlinePrice <= ".$_GET['price']." AND ";
     }
+	
+	foreach($searchFields as $field => $value){
+	$where="WHERE $field=$value"
+	
+	if ($searchFields > 1){
+	
+		$where = $where."AND $field";
+	}
+	}
 
 
 
 }
-
-$where = $where."TRUE = TRUE ";
 
 if (isset($_GET['priceSort'])){
     if($_GET['priceSort'] == 'Yes'){
@@ -41,7 +43,7 @@ if (isset($_GET['priceSort'])){
     }
 }
 
-$query = "SELECT product.ID, product.Name, product.Description, product.Brand, product.OnlinePrice, category.name AS Cat FROM product
+$query = "SELECT product.ID, product.Name, product.Description, product.Brand, product.OnlinePrice, category.name FROM product
 INNER JOIN category on category.ID = product.categoryID $where";
 $stmt = $mysql->prepare($query);
 $stmt->execute(); ?>
@@ -54,14 +56,10 @@ $stmt->execute(); ?>
 
     </head>
     <body>
-
-
-        <div class="container">
-
+       <div class="container">
             <div id="nav">
-                <?php include 'navigation.php'; ?>
+                <?php include 'navigation.php'; echo"$query"; ?>
             </div>
-
                         </br>
                         <h2>Search</h2>
 			

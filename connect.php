@@ -1,5 +1,7 @@
 <?php	
+if (!isset($_SESSION)){
 SESSION_START();
+}
 $host = "silva.computing.dundee.ac.uk";
 $username = "17ac3u07";
 $password = "cba123";

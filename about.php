@@ -1,36 +1,15 @@
-<?php 
-
-if(isset($_SESSION['login'])){
-	if($_SESSION['login'] == "Logged in"){
-			
-		header("Location: about.php");
-		
-	}
-}
-SESSION_START();
-?> 
-
 <html>
 	<head>
 		<title>SoundBlaster About</title>
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
-		
 		<div id="nav">
  				<?php include 'navigation.php'; ?>
-			</div>	
-				
+		</div>	
 		<div id="container">
-						
-			
-			
 			<div id="content">
-				
-				
-				<div id="main">
-					
+				<div id="main">					
 					<br/>
 					<br/>
 					<div id="bubbleText">
@@ -42,8 +21,6 @@ SESSION_START();
 					<br/>
 					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
-					
-					
 					<br/>
 					<div id="bubbleText">
 					<p> 
@@ -51,11 +28,9 @@ SESSION_START();
 					</p>
 					</div>
 					<br/>
-					<br/>
-					
+					<br/>		
 				</div>
 			</div>
-			
 			<div id="footer">
 				Created in 2017 by Team 7
 			</div>

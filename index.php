@@ -1,10 +1,6 @@
 <?php 
-
 SESSION_START();
-
-
-?> 
-
+?>
 <html>
 	<head>
 		<title>SoundBlaster Store</title>
@@ -12,20 +8,13 @@ SESSION_START();
 	</head>
 	<body>			
 		<div id="container">
-			
-			
-			
 			<div id="content">
-				
 				<div id="nav">
  				<?php include 'navigation.php'; ?>
 			</div>		
-				
 				<div id="main">
-					
 					<br/>
 					<br/>
-					
 					<div id="bubbleText">
 					<h2><u> HOME </u></h2>
 					<br/>
@@ -42,8 +31,6 @@ SESSION_START();
 					    <a href="login.php">Click to Log In</a></li><br/>
 						New Customer? Sign up here:   
 						<a href="register.html">Click to Register</a></li>
-						
-						 
 					</p>
 					<?php } ?>
 					<br/>
@@ -53,10 +40,8 @@ SESSION_START();
 					</div>
 					<br/>
 					<br/>
-					
 				</div>
 			</div>
-			
 			<div id="footer">
 				Created in 2017 by Team 7
 			</div>
