@@ -47,7 +47,7 @@ $stmt->execute();
 						<thead>
   <tr>
    
-    <form method="post" action="UpdateAccount.php">
+    <form method="post" action="UpdateStaffAccount.php<?php if(isset($_GET['ID'])){ echo "?ID=".$_GET['ID']; } ?>" >
 	<?php if(isset($_GET['ID'])){ 
 	 foreach($stmt->fetchAll() as $result): ?>
     <td>ID: <?php echo $result['ID']; ?> </td>
