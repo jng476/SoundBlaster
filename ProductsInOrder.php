@@ -55,7 +55,7 @@ $stmt->execute();
 							<tr>
 							<td><?php echo $result['Name']; ?></td>
 							<td><?php echo $result['description']; ?></td>
-							<td><?php echo "£".$result['Price']; ?></td>
+							<td><?php echo "&pound;".$result['Price']; ?></td>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>
