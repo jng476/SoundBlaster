@@ -17,15 +17,15 @@ if (isset($_GET['id'])){
     }
     if($_GET['name'] != ''){
 
-        $where = $where." Name LIKE '%".$_GET['name']."%' AND ";
+        $where = $where." product.Name LIKE '%".$_GET['name']."%' AND ";
     }
     if($_GET['brand'] != ''){
 
-        $where = $where." Brand LIKE '%".$_GET['brand']."%' AND ";
+        $where = $where." product.Brand LIKE '%".$_GET['brand']."%' AND ";
     }
     if($_GET['price'] != ''){
 
-        $where = $where." OnlinePrice <= ".$_GET['price']." AND ";
+        $where = $where." product.OnlinePrice <= ".$_GET['price']." AND ";
     }
 
 
@@ -37,7 +37,7 @@ $where = $where."TRUE = TRUE ";
 if (isset($_GET['priceSort'])){
     if($_GET['priceSort'] == 'Yes'){
 
-        $where = $where."ORDER BY OnlinePrice";
+        $where = $where."ORDER BY product.OnlinePrice";
     }
 }
 
