@@ -6,7 +6,8 @@ if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 }
-$query = "SELECT * FROM staff WHERE BranchID = ".$_GET['branchID'];
+$query = "SELECT staff.*, Department.Name AS Dep FROM staff 
+INNER JOIN Department ON staff.DepartmentID = Department.ID WHERE BranchID = ".$_GET['branchID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 
@@ -45,7 +46,7 @@ $stmt->execute();
 						<table id="basketTable">
 						<thead>
 						<td>Staff ID</td>
-						<td>DepartmentId</td>
+						<td>Department</td>
 						<td>AddressID</td>
 						<td>Frist Name</td>
 						<td>Last Name Name</td>
@@ -55,13 +56,14 @@ $stmt->execute();
 						<?php foreach($stmt->fetchAll() as $result): ?>
 							<tr>
 							<td><?php echo $result['ID']; ?></td>
-							<td><?php echo $result['DepartmentID']; ?></td>
+							<td><?php echo $result['Dep']; ?></td>
 							<td><?php echo $result['AddressID']; ?></td>
 							<td><?php echo $result['FirstName']; ?></td>
 							<td><?php echo $result['LastName']; ?></td>
 							<td><a href="EditStaff.php?ID=<?php echo $result['ID']; ?>"> Update </a></td>
 							</tr>
 						<?php endforeach; ?>
+						 <tr> 
 						</tbody>
 						</table>
 					</div>

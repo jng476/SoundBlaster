@@ -9,7 +9,7 @@ if($_SESSION['login']!="Logged in"){
 $where = "WHERE ";
 if (isset($_GET['id'])){
     if($_GET['id'] != ''){
-        $where = $where."id = ".$_GET['id']." AND ";
+        $where = $where."product.id = ".$_GET['id']." AND ";
     }
     if($_GET['category'] != ''){
 
