@@ -5,7 +5,7 @@ include 'connect.php';
 $permissions = array(
     "branch"=>"0"
 );
-include 'check_authorisation.php';
+include 'check-authorisation.php';
 $query = "SELECT * FROM branch";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
