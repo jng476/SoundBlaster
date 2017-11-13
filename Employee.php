@@ -59,6 +59,7 @@ $stmt->execute();
 							<td><?php echo $result['AddressID']; ?></td>
 							<td><?php echo $result['FirstName']; ?></td>
 							<td><?php echo $result['LastName']; ?></td>
+							<td><a href="EditStaff.php?ID=<?php echo $result['ID']; ?>"> Update </a></td>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>

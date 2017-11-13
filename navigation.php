@@ -2,7 +2,7 @@
 if(isset($_GET['searchName']))
 {
 	// redirect if fulfilled
-	header("Location:searchTable.php?id=&supplier=&category=&name=".$_GET['searchName']."&brand=&price=");
+	header("Location:searchTable.php?id=&category=&name=".$_GET['searchName']."&brand=&price=");
 }
 ?>	
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -56,7 +56,6 @@ if(isset($_GET['searchName']))
 				<ul class="dropdown-menu">
 					<li><a href="AccountInfo.php">Account Details</a></li>
 					<li><a href="viewOrder.php">Orders</a></li>
-					<li><a href="#">Setting</a></li>
 					<li><a href="logout.php">Logout</a></li>
 					
 				</ul>
@@ -74,10 +73,7 @@ if(isset($_GET['searchName']))
 					</div>
 					</form> 
 			</li>
-			
 			</ul>
-				
-    
         </div>
       </div>
 </nav>

@@ -46,7 +46,8 @@ if(isset($_SESSION['Basket'])){
 						<thead>
 						<td>Name</td>
 						<td>Quantity</td>
-						<td>Price</td>
+						<td>Price(Each)</td>
+						<td>Change Quantity</td>
 						</thead>
 		
 						<tbody?>
@@ -60,7 +61,7 @@ if(isset($_SESSION['Basket'])){
 							<?php foreach($stmt->fetchAll() as $result): ?>
 							<td><?php echo $result['Name']; ?></td>
 							<td><?php echo $_SESSION['Basket']->amount[$i]; ?></td>
-							<td> £:<?php echo $result['OnlinePrice']; ?></td>
+							<td><?php echo "&pound;". $result['OnlinePrice']; ?></td>
 							<td><select name="amount[<?php echo $i ?>]">
                                     <option value=""> </option>
 									<option value=0>0</option>

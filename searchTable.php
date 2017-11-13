@@ -12,15 +12,15 @@ if (isset($_GET['id'])){
     }
     if($_GET['name'] != ''){
 
-        $where = $where." Name LIKE '%".$_GET['name']."%' AND ";
+        $where = $where." product.Name LIKE '%".$_GET['name']."%' AND ";
     }
     if($_GET['brand'] != ''){
 
-        $where = $where." Brand LIKE '%".$_GET['brand']."%' AND ";
+        $where = $where." product.Brand LIKE '%".$_GET['brand']."%' AND ";
     }
     if($_GET['price'] != ''){
 
-        $where = $where." OnlinePrice <= ".$_GET['price']." AND ";
+        $where = $where." product.OnlinePrice <= ".$_GET['price']." AND ";
     }
 	
 	foreach($searchFields as $field => $value){
@@ -39,7 +39,7 @@ if (isset($_GET['id'])){
 if (isset($_GET['priceSort'])){
     if($_GET['priceSort'] == 'Yes'){
 
-        $where = $where."ORDER BY OnlinePrice";
+        $where = $where."ORDER BY product.OnlinePrice";
     }
 }
 
@@ -61,8 +61,12 @@ $stmt->execute(); ?>
                 <?php include 'navigation.php'; echo"$query"; ?>
             </div>
                         </br>
+						
                         <h2>Search</h2>
-			
+						</br>
+						<button data-toggle="collapse" data-target="#demo" >Refine Search</button>
+
+						<div id="demo" class="collapse">
 						<div id="bubbleText">
                         <form method="get" action="searchTable.php" id="searchForm">
                             <div class="form-group">
@@ -94,12 +98,14 @@ $stmt->execute(); ?>
                             <input type="submit" value="Search">
                         </form>
 						</div>
+						</div>
         </div>
 
         <div class="container">
 		<div id="bubbleText">
-            <table id="resultTable" style="width:110%" align="centre">
+            <table id="resultTable"  align="centre">
                 <thead>
+					<td>Photo</td>
                     <td>ID</td>
                     <td>Cat</td>
                     <td>Name</td>
@@ -108,17 +114,20 @@ $stmt->execute(); ?>
                     <td>Price</td>
                     <td>Amount</td>
                 </thead>
+				
+				
 
                 <tbody>
                     <form method="post" action="addBasket.php">
                         <?php  foreach($stmt->fetchAll() as $result): ?>
                             <tr>
+								<td><img src="img/<?php echo $result['ID']; ?>.jpg"; style="width:100px;height:100px;" class="thumb"></td>
                                 <td><?php echo $result['ID']; ?></td>
                                 <td><?php echo $result['Cat']; ?></td>
                                 <td><?php echo $result['Name']; ?></td>
                                 <td><?php echo $result['Description']; ?></td>
                                 <td><?php echo $result['Brand']; ?></td>
-                                <td><?php echo "£".$result['OnlinePrice']; ?></td>
+                                <td><?php echo "&pound;".$result['OnlinePrice']; ?></td>
                                 <td><select name="amount[<?php echo $result['ID'] ?>]">
                                     <option value=""> </option>
                                     <option value=1>1</option>
@@ -138,7 +147,9 @@ $stmt->execute(); ?>
                 </tbody>
             </table>
 			</div>
-        </div>
+			</div>
 
-    </body>
+    
+	
+</body>
 </html>

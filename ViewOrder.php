@@ -66,7 +66,7 @@ $stmt->execute();
 							<td><?php echo $result['date']; ?></td>
 							<td><?php echo $result['price']; ?></td>
 							<td><?php echo $result['trackingID']; ?></td>
-							<td> <a class="nav-link" href="https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/ProductsInOrder.php?ID=<?php echo $result['ID']; ?>">View Products </a> </td>
+							<td> <a class="nav-link" href="ProductsInOrder.php?ID=<?php echo $result['ID']; ?>">View Products </a> </td>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>

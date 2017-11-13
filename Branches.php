@@ -52,8 +52,8 @@ $stmt->execute();
 							<td><?php echo $result['ID']; ?></td>
 							<td><?php echo $result['AddressID']; ?></td>
 							<td><?php echo $result['Phone']; ?></td>
-							<td> <a class="nav-link" href="https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/Employee.php?branchID=<?php echo $result['ID']; ?>">View Staff </a></td>
-							<td> <a class="nav-link" href="https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/BranchProducts.php?branchID=<?php echo $result['ID']; ?>">View Products </a> </td>
+							<td> <a class="nav-link" href="Employee.php?branchID=<?php echo $result['ID']; ?>">View Staff </a></td>
+							<td> <a class="nav-link" href="BranchProducts.php?branchID=<?php echo $result['ID']; ?>">View Products </a> </td>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>
