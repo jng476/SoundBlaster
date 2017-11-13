@@ -44,19 +44,24 @@ SESSION_START();
 					</div>
 					<br/>
 					<div id="bubbleText">
-					<h1>Our Location</h1>
+					<h1><u>Our Location</u></h1>
 					<br/>
 					<div id="mymap" style="text-align:center; margin-left:auto; margin-right: auto ;width:600px;height:600px;background:black;"></div>
 
 					<script>
 					function myMap() {
+					var myLatLng = {lat: 56.4586047, lng:  -2.9829601};
 					var mapOptions = {
-					center: new google.maps.LatLng(56.4612138, -2.994176),
-					zoom: 12,
+					center: new google.maps.LatLng(56.4586047, -2.9829601),
+					zoom: 15,
 					mapTypeId: google.maps.MapTypeId.HYBRID
 					}
 					var map = new google.maps.Map(document.getElementById("mymap"), mapOptions);
-					
+					var marker = new google.maps.Marker({
+					position: myLatLng,
+					map: map,
+					title: 'Hello World!'
+					});
 
 					}
 					</script>
