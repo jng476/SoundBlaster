@@ -61,7 +61,6 @@ if(isset($_GET['searchName']))
 				<ul class="dropdown-menu">
 					<li><a href="AccountInfo.php">Account Details</a></li>
 					<li><a href="viewOrder.php">Orders</a></li>
-					<li><a href="#">Setting</a></li>
 					<li><a href="logout.php">Logout</a></li>
 					
 				</ul>

@@ -14,6 +14,8 @@ SESSION_START();
 	<head>
 		<title>SoundBlaster Contact</title>
 		<?php include 'scripts.html'?>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
 
 	</head>
 	<body>
@@ -41,8 +43,26 @@ SESSION_START();
 						this_email_does_not_exist@hotmail.com <br/>  </p>
 					</div>
 					<br/>
-					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
+					<div id="bubbleText">
+					<h1>Our Location</h1>
 					<br/>
+					<div id="mymap" style="text-align:center; margin-left:auto; margin-right: auto ;width:600px;height:600px;background:black;"></div>
+
+					<script>
+					function myMap() {
+					var mapOptions = {
+					center: new google.maps.LatLng(56.4612138, -2.994176),
+					zoom: 12,
+					mapTypeId: google.maps.MapTypeId.HYBRID
+					}
+					var map = new google.maps.Map(document.getElementById("mymap"), mapOptions);
+					
+
+					}
+					</script>
+
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJcl5I0h1KDHwmro0L0_omoOepfFvKGgk&callback=myMap"></script>
+					</div>
 					<br/>
 					<div id="bubbleText">
 					<p> 
