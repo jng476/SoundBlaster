@@ -123,7 +123,7 @@ $stmt->execute(); ?>
                     <form method="post" action="addBasket.php">
                         <?php  foreach($stmt->fetchAll() as $result): ?>
                             <tr>
-								<td><img src="img/aa.jpg"; style="width:100px;height:100px;" class="thumb"></td>
+								<td><img src="img/<?php echo $result['ID']; ?>.jpg"; style="width:100px;height:100px;" class="thumb"></td>
                                 <td><?php echo $result['ID']; ?></td>
                                 <td><?php echo $result['Cat']; ?></td>
                                 <td><?php echo $result['Name']; ?></td>
