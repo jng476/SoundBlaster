@@ -107,6 +107,7 @@ $stmt->execute(); ?>
 		<div id="bubbleText">
             <table id="resultTable"  align="centre">
                 <thead>
+					<td>Photo</td>
                     <td>ID</td>
                     <td>Cat</td>
                     <td>Name</td>
@@ -115,17 +116,20 @@ $stmt->execute(); ?>
                     <td>Price</td>
                     <td>Amount</td>
                 </thead>
+				
+				
 
                 <tbody>
                     <form method="post" action="addBasket.php">
                         <?php  foreach($stmt->fetchAll() as $result): ?>
                             <tr>
+								<td><img src="img/aa.jpg"; style="width:100px;height:100px;" class="thumb"></td>
                                 <td><?php echo $result['ID']; ?></td>
                                 <td><?php echo $result['Cat']; ?></td>
                                 <td><?php echo $result['Name']; ?></td>
                                 <td><?php echo $result['Description']; ?></td>
                                 <td><?php echo $result['Brand']; ?></td>
-                                <td><?php echo "£".$result['OnlinePrice']; ?></td>
+                                <td><?php echo "&pound;".$result['OnlinePrice']; ?></td>
                                 <td><select name="amount[<?php echo $result['ID'] ?>]">
                                     <option value=""> </option>
                                     <option value=1>1</option>
@@ -145,7 +149,9 @@ $stmt->execute(); ?>
                 </tbody>
             </table>
 			</div>
-        </div>
+			</div>
 
-    </body>
+    
+	
+</body>
 </html>
