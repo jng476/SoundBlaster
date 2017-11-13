@@ -32,11 +32,26 @@ SESSION_START();
 					<p> Welcome to the online store of SoundBlaster! <br/>
 						Our store offers a range of products for musical playback. We stock a variety of playback options, including headphones, earphones and speakers <br/>  </p>
 					</div>
-					<br/>
-					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
-					<br/>
-					<?php if(!ISSET($_SESSION['login'])){ ?>
+					
 					<div id="bubbleText">
+					<h2><u>NEWS</u></h2>
+					<br/>
+					<p>Another clickbait title!!</p>
+					
+					<iframe width="420" height="345" src="https://www.youtube.com/embed/lEjwyYOFwZg">
+					</iframe>
+					
+					<br/>
+					<br/>
+					<p>Are these Bluetooth Speakers? You Wont believe your eyes!!!</p>
+					
+					<iframe width="420" height="345" src="https://www.youtube.com/embed/ZBDjYzY_6-k">
+					</iframe>
+					</div>
+					
+					<div id="bubbleText">
+					<?php if(!ISSET($_SESSION['login'])){ ?>
+					
 					<p> You must be signed in to view our products and make an order!<br/>
 					    Existing Customer? You can Login here:
 					    <a href="login.php">Click to Log In</a></li><br/>

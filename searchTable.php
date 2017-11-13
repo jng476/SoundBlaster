@@ -105,7 +105,7 @@ $stmt->execute(); ?>
 
         <div class="container">
 		<div id="bubbleText">
-            <table id="resultTable" style="width:110%" align="centre">
+            <table id="resultTable"  align="centre">
                 <thead>
                     <td>ID</td>
                     <td>Cat</td>
