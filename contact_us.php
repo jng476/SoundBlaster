@@ -14,7 +14,7 @@ SESSION_START();
 	<head>
 		<title>SoundBlaster Contact</title>
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+
 	</head>
 	<body>
 		
@@ -41,7 +41,7 @@ SESSION_START();
 						this_email_does_not_exist@hotmail.com <br/>  </p>
 					</div>
 					<br/>
-					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
+					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
 					<br/>
 					<div id="bubbleText">

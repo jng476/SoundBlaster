@@ -51,7 +51,7 @@ $stmt->execute(); ?>
         <title>Search Table</title>
         <meta charset="utf-8">
         <?php include 'scripts.html'?>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+
     </head>
     <body>
 

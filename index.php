@@ -9,13 +9,9 @@ SESSION_START();
 	<head>
 		<title>SoundBlaster Store</title>
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
-	<body>
-	
-				
+	<body>			
 		<div id="container">
-					
 			
 			
 			
@@ -37,7 +33,7 @@ SESSION_START();
 						Our store offers a range of products for musical playback. We stock a variety of playback options, including headphones, earphones and speakers <br/>  </p>
 					</div>
 					<br/>
-					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
+					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
 					<?php if(!ISSET($_SESSION['login'])){ ?>
 					<div id="bubbleText">

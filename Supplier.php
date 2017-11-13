@@ -15,7 +15,7 @@ $stmt->execute();
 	<head>
 		 <title>Suppliers</title>		
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+
 		
 	</head>
 	<body>

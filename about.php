@@ -14,7 +14,7 @@ SESSION_START();
 	<head>
 		<title>SoundBlaster About</title>
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
 		
@@ -40,7 +40,7 @@ SESSION_START();
 						Team 7 Comprises of Josh Ng, Martin Learmont, Satyajeet Sen and Cameron O'Brien<br/>  </p>
 					</div>
 					<br/>
-					<img src="aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
+					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
 					
 					

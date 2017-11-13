@@ -18,7 +18,7 @@ if(isset($_SESSION['Basket'])){
 	<head>
 		 <title>Basket</title>		
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+
 		
 	</head>
 	<body>

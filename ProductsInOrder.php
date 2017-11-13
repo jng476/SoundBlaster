@@ -17,7 +17,7 @@ $stmt->execute();
 	<head>
 		 <title>Ordered Items</title>		
 		<?php include 'scripts.html'?>
-		<link rel="stylesheet" type="text/css" href="style.css" />
+
 		
 	</head>
 	<body>

@@ -61,7 +61,6 @@
       </div>
 </nav>
 
-=======
 <!-- Navigation -->
 
 <?php 
