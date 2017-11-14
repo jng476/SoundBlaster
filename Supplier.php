@@ -56,7 +56,7 @@ $stmt->execute();
 							<td><?php echo $result['Name']; ?></td>
 							<td><?php echo $result['Phone']; ?></td>
 							<td><?php echo $result['Email']; ?></td>
-							<td> <a class="nav-link" href="https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewSupplier.php?supplierID=<?php echo $result['ID']; ?>">View Products </a> </td>
+							<td> <a class="nav-link" href="viewSupplier.php?supplierID=<?php echo $result['ID']; ?>">View Products </a> </td>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>

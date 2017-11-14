@@ -123,9 +123,14 @@ $stmt->execute(); ?>
                     <form method="post" action="addBasket.php">
                         <?php  foreach($stmt->fetchAll() as $result): ?>
                             <tr>
-								<td><img src="img/<?php echo $result['ID']; ?>.jpg"; style="width:100px;height:100px;" class="thumb"></td>
+								<td>
+								<a href="singleProduct.php?id=<?php echo $result['ID']; ?>&category=<?php echo $result['Cat']; ?>&name=<?php echo $result['Name']; ?>&brand=<?php echo $result['Brand']; ?>&price=<?php echo $result['OnlinePrice']; ?>">
+								<img src="img/<?php echo $result['ID']; ?>.jpg"; style="width:100px;height:100px;" class="thumb">
+								</a>
+
+								</td>								
                                 <td><?php echo $result['ID']; ?></td>
-                                <td><?php echo $result['Cat']; ?></td>
+                                <td><?php echo $result['Cat']; ?></td>							
                                 <td><?php echo $result['Name']; ?></td>
                                 <td><?php echo $result['Description']; ?></td>
                                 <td><?php echo $result['Brand']; ?></td>
