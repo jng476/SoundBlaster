@@ -63,11 +63,12 @@ $stmt->execute(); ?>
             </div>
 
                         </br>
-						
+						<div id="bubbleText">
                         <h2>Search</h2>
+						
 						</br>
 						<button data-toggle="collapse" data-target="#demo" >Refine Search</button>
-
+						</div>
 						<div id="demo" class="collapse">
 						<div id="bubbleText">
                         <form method="get" action="searchTable.php" id="searchForm">

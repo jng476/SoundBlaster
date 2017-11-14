@@ -30,7 +30,8 @@ h1, h2, h3
     float: center;
     border-radius: 25px;
     border: 2px solid black;
-    padding: 20px;
+    padding-left: auto;
+	padding-right: auto;
     max-width: 90%;
 	margin: 5%
 	
@@ -43,6 +44,19 @@ h1, h2, h3
     border-radius: 25px;
     border: 2px solid black;
     padding: 20px;
+    max-width: 90%;
+	margin: 5%
+	
+}
+
+#bubbleTextRegister {
+	background-color: rgba(100, 100, 255, 0.5);
+	text-align: center;
+    float: center;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding-left: 200px;
+	padding-right: auto;
     max-width: 90%;
 	margin: 5%
 	
@@ -78,6 +92,7 @@ table#resultTable {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 table#resultTable a:link, table#resultTable a:visited {
 	color: white;
@@ -223,7 +238,5 @@ li{
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
 }
-
-
 
 
