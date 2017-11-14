@@ -75,8 +75,12 @@ table#resultTable {
     color: white;
 	text-align: center;
 	float: center;
-	margin-left: 15%;
-	margi-right: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table#resultTable a:link, table#resultTable a:visited {
+	color: white;
 }
 
 table#orderTable {
@@ -149,18 +153,16 @@ tr:nth-child(odd) td { background-color: rgba(10, 0, 100, 0.3); }
 tr td:hover { background: #659EC7; color: white; }  
 /* Hover cell effect! */
 
-
-/*********************************************
-        		Theme Elements
-*********************************************/
+li{
+	
+	padding-right: 10px;
+	
+	
+}
 
 .gold{
 	color: #FFBF00;
 }
-
-/*********************************************
-					PRODUCTS
-*********************************************/
 
 .product{
 	border: 1px solid #dddddd;
@@ -203,13 +205,6 @@ tr td:hover { background: #659EC7; color: white; }
 		text-align:center;
 }
 
-/*********************************************
-					VIEW
-*******************************************
-
-/*********************************************
-				ITEM 
-*********************************************/
 
 
 .service1-item > img:hover {
@@ -228,7 +223,6 @@ tr td:hover { background: #659EC7; color: white; }
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
 }
-
 
 
 

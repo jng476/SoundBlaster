@@ -115,6 +115,7 @@ $stmt->execute(); ?>
                     <td>Brand</td>
                     <td>Price</td>
                     <td>Amount</td>
+					<td>More...</td>
                 </thead>
 				
 				
@@ -124,17 +125,42 @@ $stmt->execute(); ?>
                         <?php  foreach($stmt->fetchAll() as $result): ?>
                             <tr>
 								<td>
-								<a href="singleProduct.php?id=<?php echo $result['ID']; ?>&category=<?php echo $result['Cat']; ?>&name=<?php echo $result['Name']; ?>&brand=<?php echo $result['Brand']; ?>&price=<?php echo $result['OnlinePrice']; ?>">
+								
+								<a href="singleProduct.php?id=<?php echo $result['ID']; ?>&category=&name=&brand=&price=<?php echo $result['OnlinePrice']; ?>">
+								
 								<img src="img/<?php echo $result['ID']; ?>.jpg"; style="width:100px;height:100px;" class="thumb">
 								</a>
-
 								</td>								
-                                <td><?php echo $result['ID']; ?></td>
-                                <td><?php echo $result['Cat']; ?></td>							
-                                <td><?php echo $result['Name']; ?></td>
-                                <td><?php echo $result['Description']; ?></td>
-                                <td><?php echo $result['Brand']; ?></td>
-                                <td><?php echo "&pound;".$result['OnlinePrice']; ?></td>
+                                <td>
+								<div id="differentlinks">
+								<a href="singleProduct.php?id=<?php echo $result['ID']; ?>&category=&name=&brand=&price=">
+								<?php echo $result['ID']; ?>
+								</a>
+								</div>
+								</td>
+                                <td>
+								<?php echo $result['Cat']; ?>		
+								</td>							
+                                <td>
+								<a href="singleProduct.php?id=<?php echo $result['ID']; ?>&category=&name=&brand=&price=">
+								<?php echo $result['Name']; ?>
+								</a>
+								</td>
+                                <td>
+								
+								<?php echo $result['Description']; ?>
+								
+								</td>
+                                <td>
+								<a href="searchtable.php?id=&category=&name=&brand=<?php echo $result['Brand']; ?>&price=">
+								<?php echo $result['Brand']; ?>
+								</a>
+								</td>
+                                <td>
+								<a href="searchTable.php?id=<?php echo $result['ID']; ?>&category=&name=&brand=&price=<?php echo $result['OnlinePrice']; ?>">
+								<?php echo "&pound;".$result['OnlinePrice']; ?>
+								</a>
+								</td>
                                 <td><select name="amount[<?php echo $result['ID'] ?>]">
                                     <option value=""> </option>
                                     <option value=1>1</option>
@@ -147,6 +173,12 @@ $stmt->execute(); ?>
                                     <option value=8>8</option>
                                     <option value=9>9</option>
                                 </select></td>
+								<td>
+								<a href="singleProduct.php?id=<?php echo $result['ID']; ?>&category=&name=&brand=&price=">
+								<p> View Details</p>
+								</a>
+								</td>
+
                             </tr>
                         <?php endforeach; ?>
                         <td><input type="submit" value="Add To Basket"></td>
