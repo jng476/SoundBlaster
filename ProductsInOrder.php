@@ -39,7 +39,7 @@ $stmt->execute();
 					</br>
 					
 					<div id="bubbleText">
-					<table>
+					<table id= "view_order_table">
 					<thead>
 						<h2><u> Ordered Items </u></h2>
 						</br>

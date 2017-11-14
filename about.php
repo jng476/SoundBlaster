@@ -19,7 +19,7 @@
 						Team 7 Comprises of Josh Ng, Martin Learmont, Satyajeet Sen and Cameron O'Brien<br/>  </p>
 					</div>
 					<br/>
-					<img src="img/aa.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
+					<img src="img/people.jpg" alt="SOUNDBLASTER Logo" style = "width:250px;height:212px;">
 					<br/>
 					<br/>
 					<div id="bubbleText">

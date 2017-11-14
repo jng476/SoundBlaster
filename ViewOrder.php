@@ -41,7 +41,7 @@ $stmt->execute();
 					</br>
 					
 					<div id="bubbleText">
-					<table>
+					<table id="orderTable">
 					<thead>
 						<h2><u> Orders </u></h2>
 						</br>
