@@ -45,6 +45,15 @@ if(isset($_GET['searchName']))
 			<li class="nav-item">
               <a class="nav-link" href="viewBasket.php">My Basket</a>
             </li>
+			<li class="dropdown">
+				<a class="nav-link" data-toggle="dropdown" href="#">Admin &#9660
+				<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="Branches.php">View Branches, Staff and Branch Products</a></li>
+					<br/>
+					<li><a href="Supplier.php">View Suppliers and their Products</a></li>				
+				</ul>
+			</li>
 			<?php if(!isset($_SESSION['login'])){ ?>
 			<li class="nav-item">
               <a class="nav-link" href="login.php">Login</a>

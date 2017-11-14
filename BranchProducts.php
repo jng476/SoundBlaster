@@ -63,8 +63,8 @@ $stmt->execute();
 							<td><?php echo $result['Name']; ?></td>
 							<td><?php echo $result['Description']; ?></td>
 							<td><?php echo $result['Brand']; ?></td>
-							<td><?php echo '£:'.$result['SupplierCost']; ?></td>
-							<td><?php echo '£:'.$result['OnlinePrice']; ?></td>
+							<td><?php echo '&pound;'.$result['SupplierCost']; ?></td>
+							<td><?php echo '&pound;'.$result['OnlinePrice']; ?></td>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>
