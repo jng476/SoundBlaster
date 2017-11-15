@@ -168,18 +168,24 @@ tr:nth-child(odd) td { background-color: rgba(10, 0, 100, 0.3); }
 tr td:hover { background: #659EC7; color: white; }  
 /* Hover cell effect! */
 
-li{
-	
+li {
 	padding-right: 10px;
-	
-	
 }
 
-.gold{
+ul.pagination > li {
+    padding-right: 0px;    
+}
+
+.dropdown-menu {
+    background-color:#343a40;
+    
+}
+
+.gold {
 	color: #FFBF00;
 }
 
-.product{
+.product {
 	border: 1px solid #dddddd;
 	height: 321px;
 }
@@ -238,5 +244,3 @@ li{
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
 }
-
-

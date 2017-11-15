@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION)) {
+    SESSION_START();
+}
 if($_SESSION['login']!="Logged in"){
     header("Location: login.php");
 }

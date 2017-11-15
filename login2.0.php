@@ -1,5 +1,4 @@
 <?php
-
 include 'connect.php';
 
 $prepared = $mysql->prepare('SELECT * FROM useraccount where username= :username AND password = :password');
@@ -8,14 +7,22 @@ $prepared->bindParam(':password', $_POST['password']);
 $prepared->execute();
 
 if ($prepared->rowCount() != 0) {
+    $user=$prepared->fetch(PDO::FETCH_ASSOC);
     $_SESSION['login'] = "Logged in";
-    $_SESSION['username']=$_POST['username'];
+    $_SESSION['username'] = $users['username'];
     $_SESSION['permissions'] = array();
-    $prepPermissions = $mysql->prepare('select p.`Name`, uap.`AccessLevel` from useraccountpermission as uap join permission as p on uap.PermissionID = p.ID join useraccount as ua on uap.UserAccountID = ua.ID where ua.username=:username;');
+    if(isset($user['StaffID']))
+        $_SESSION['user_type'] = "staff";
+    if(isset($user['CustomerID']))
+        $_SESSION['user_type'] = "customer";
+    if(isset($user['SupplierID']))
+        $_SESSION['user_type'] = "supplier";
+    $prepPermissions = $mysql->prepare('select p.`Name`, uap.`AccessLevel` from useraccountpermission as uap join permission as p on uap.PermissionID = p.
+ID join useraccount as ua on uap.UserAccountID = ua.ID where ua.username=:username;');
     $prepPermissions->bindParam(':username', $_POST['username']);
     $prepPermissions->execute();
     $permissionResult = $prepPermissions ->fetchAll(PDO::FETCH_ASSOC);
-
+    
     foreach($permissionResult as $row) {
         $_SESSION['permissions'][$row['Name']] = $row['AccessLevel'];
     }
