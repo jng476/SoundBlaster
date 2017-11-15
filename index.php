@@ -45,7 +45,7 @@ SESSION_START();
 					    Existing Customer? You can Login here:
 					    <a href="login.php">Click to Log In</a></li><br/>
 						New Customer? Sign up here:   
-						<a href="register.html">Click to Register</a></li>
+						<a href="register.php">Click to Register</a></li>
 					</p>
 					<?php } ?>
 					<br/>
