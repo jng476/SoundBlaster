@@ -1,12 +1,11 @@
 <?php 
-// https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewSupplier.php?supplierID=1 
-// link above for the get. 
 include 'connect.php';
 if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 }
-$query = "SELECT * FROM product JOIN branchproduct ON product.ID = branchproduct.ProductID WHERE BranchID= ".$_GET['branchID'];
+$query = "SELECT product.*, branchproduct.Stock FROM product 
+JOIN branchproduct ON product.ID = branchproduct.ProductID WHERE BranchID= ".$_GET['branchID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 
@@ -46,18 +45,19 @@ $stmt->execute();
 						<thead>
 						<td>ID</td>
 						<td>SupplierId</td>
-						<td>CategoryID'</td>
+						<td>CategoryID</td>
 						<td>Name</td>
 						<td>Description</td>
 						<td>Brand</td>
 						<td>Supplier Cost</td>
 						<td>Online Price</td>
+						<td>Stock</td>
 						</thead>
 		
 						<tbody?>
 						<?php foreach($stmt->fetchAll() as $result): ?>
 							<tr>
-							<td><?php echo $result['ProductID']; ?></td>
+							<td><?php echo $result['ID']; ?></td>
 							<td><?php echo $result['SupplierID']; ?></td>
 							<td><?php echo $result['CategoryID']; ?></td>
 							<td><?php echo $result['Name']; ?></td>
@@ -65,8 +65,18 @@ $stmt->execute();
 							<td><?php echo $result['Brand']; ?></td>
 							<td><?php echo '&pound;'.$result['SupplierCost']; ?></td>
 							<td><?php echo '&pound;'.$result['OnlinePrice']; ?></td>
+							<form method='POST' action="UpdateStock.php?BranchID=<?php echo $_GET['branchID']; ?>">
+							<td><input type="number" name="Stock[<?php echo $result['ID'] ?>]" min="0" value=<?php echo $result['Stock'] ?>></td>
 							</tr>
 						<?php endforeach; ?>
+						<tr> 
+						<td><input type="submit" value="UpdateStock"</td>
+						</form>
+						<form method="post" action="AddStock.php?BranchID=<?php echo $_GET['branchID']; ?>">
+						<td><input type="submit" value="AddStock"</td>
+						</form>
+						</tr>
+						
 						</tbody>
 						</table>
 					</div>
