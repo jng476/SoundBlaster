@@ -44,7 +44,10 @@ if(isset($_SESSION['login'])){
                                         </div>
                                         <input type="submit" value="Login">
                                         <td> <?php echo "<font color='red'>".$error."</font>"; ?> </td>
-                                    </form>
+										</form>
+										<form method="post" action="Register.php">
+										<input type="submit" value="Register">
+										</form>
                                 </div>
                 </div>
             </div>

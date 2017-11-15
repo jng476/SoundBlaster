@@ -30,7 +30,7 @@ if ($prepared->rowCount() != 0) {
         if(!key_exists($_SESSION, $row['Name']) || $row['AccessLevel'] > $_SESSION['permissions']['Name'])
             $_SESSION['permissions'][$row['Name']] = $row['AccessLevel'];
     }
-    header("Location: searchTable.php");
+    header("Location: index.php");
 }
 else {
     echo "Incorrect username or password";
