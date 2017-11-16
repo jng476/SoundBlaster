@@ -53,11 +53,11 @@
 						<div class="row">
 							<div class="col-sm-4 form-group">
 								<label>County</label>
-								<input type="text" placeholder="Enter City Name Here.." name="Line2" class="form-control" required>
+								<input type="text" placeholder="Enter Country Name Here.." name="Line2" class="form-control" required>
 							</div>	
 							<div class="col-sm-4 form-group">
 								<label>City</label>
-								<input type="text" placeholder="Enter State Name Here.." name="City" class="form-control" required>
+								<input type="text" placeholder="Enter City Name Here.." name="City" class="form-control" required>
 							</div>	
 							<div class="col-sm-4 form-group">
 								<label>Postcode</label>
@@ -65,7 +65,7 @@
 							</div>		
 						</div>						
 					<div class="form-group">
-						<label>Country</label>
+						<label>Phone Number</label>
 						<input type="text" placeholder="Enter Phone Number Here.." name="Country" class="form-control" required>
 					</div>		
 					<div class="form-group">
