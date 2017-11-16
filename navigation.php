@@ -60,7 +60,7 @@ echo '<li class="nav-item">
 				<ul class="dropdown-menu">
                 <li><a class="nav-link" href="AccountInfo.php">Account Details</a></li>
     <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){
-                                                  echo '<li><a href="viewOrder.php">Orders</a></li>'; } ?>
+                                                  echo '<li><a class="nav-link" href="viewOrder.php">Orders</a></li>'; } ?>
 					<li><a class="nav-link" href="logout.php">Logout</a></li>
 					
 				</ul>
