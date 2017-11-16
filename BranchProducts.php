@@ -5,8 +5,9 @@ if($_SESSION['login']!="Logged in"){
 	die();
 }
 $query = "SELECT product.*, branchproduct.Stock FROM product 
-JOIN branchproduct ON product.ID = branchproduct.ProductID WHERE BranchID= ".$_GET['branchID'];
+JOIN branchproduct ON product.ID = branchproduct.ProductID WHERE BranchID= :branchID";
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':branchID', $_GET['branchID']);
 $stmt->execute();
 
 ?> 
