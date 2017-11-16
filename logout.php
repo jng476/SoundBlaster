@@ -1,13 +1,8 @@
 <?php	
-
-
 session_start();
-
-unset($_SESSION['login']);
-unset($_SESSION['username']);
-unset($_SESSION['Basket']);
+session_unset();
+setcookie(session_name(),'',0,'/');
+session_destroy();
 header("Location: login.php");
-
-
 exit();
 ?>
