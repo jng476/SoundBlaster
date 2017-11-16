@@ -1,8 +1,8 @@
 <?php
 include "connect.php";
-$stmt = $mysql->prepare('SELECT ID, Name FROM category;');
-$stmt->execute();
-$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$cats = $mysql->prepare('SELECT ID, Name FROM category;');
+$cats->execute();
+$categories = $cats->fetchAll(PDO::FETCH_ASSOC);
 
 if(isset($_GET['searchName']))    
 {
