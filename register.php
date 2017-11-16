@@ -52,21 +52,18 @@
 						</div>	
 						<div class="row">
 							<div class="col-sm-4 form-group">
-								<label>County</label>
-								<input type="text" placeholder="Enter Country Name Here.." name="Line2" class="form-control" required>
+								<label>Line2</label>
+								<input type="text" placeholder="Enter Line2 of Address Here.." name="Line2" class="form-control" required>
 							</div>	
 							<div class="col-sm-4 form-group">
 								<label>City</label>
 								<input type="text" placeholder="Enter City Name Here.." name="City" class="form-control" required>
 							</div>	
-							<div class="col-sm-4 form-group">
-								<label>Postcode</label>
-								<input type="text" placeholder="Enter Zip Code Here.." name="PostCode" class="form-control" required>
-							</div>		
+									
 						</div>						
 					<div class="form-group">
-						<label>Phone Number</label>
-						<input type="text" placeholder="Enter Phone Number Here.." name="Country" class="form-control" required>
+						<label>Country</label>
+						<input type="text" placeholder="Enter Country Here.." name="Country" class="form-control" required>
 					</div>		
 					<div class="form-group">
 						<label>Email Address</label>
