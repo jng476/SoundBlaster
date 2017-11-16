@@ -9,7 +9,7 @@ $prepared->execute();
 if ($prepared->rowCount() != 0) {
     $user=$prepared->fetch(PDO::FETCH_ASSOC);
     $_SESSION['login'] = "Logged in";
-    $_SESSION['username'] = $users['username'];
+    $_SESSION['username'] = $_POST['username'];
     $_SESSION['permissions'] = array();
     if(isset($user['StaffID']))
         $_SESSION['user_type'] = "staff";

@@ -40,7 +40,6 @@ if(isset($_GET['searchName']))
               <a class="nav-link" href="viewBasket.php">My Basket</a>
             </li>
                      '; } ?>
-
                 <?php if(isset($_SESSION['permissions']['admin'])): ?>
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Admin
