@@ -8,8 +8,9 @@ if($_SESSION['login']!="Logged in"){
 $query = "SELECT customer.*, address.LINE1, address.LINE2, address.PostCode, address.Country, address.City, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM customer 
 JOIN useraccount on useraccount.customerid = customer.id
 INNER JOIN address on address.ID = customer.AddressID 
-where username = '".$_SESSION['username']."'";
+where username = :Username";
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':Username', $_SESSION['username']);
 $stmt->execute();
 ?> 
 

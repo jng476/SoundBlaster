@@ -23,17 +23,21 @@ if($_SESSION['login']!="Logged in"){
 	die();
 }
 $query = "INSERT INTO customer_order(addressID, CustomerID, status, date, TrackingId)
-SELECT customer.addressID, customerID, 'pending', CURDATE(), '".$TrackingId."' from useraccount 
+SELECT customer.addressID, customerID, 'pending', CURDATE(), :TrackingId from useraccount 
 JOIN customer on customerID = customer.ID
-Where username = '".$_SESSION['username']."';";
+Where username = :username";
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':TrackingId', $TrackingId);
+$stmt->bindParam(':username', $SESSION['username']);
 $stmt->execute();
 for($i =0; $i<$_SESSION['Basket']->index; $i++){
 	
 	$query = "INSERT into orderline
-	SELECT MAX(customer_order.id), ".$_SESSION['Basket']->ID[$i].", ROUND(OnlinePrice*".$_SESSION['Basket']->amount[$i].", 2), ".$_SESSION['Basket']->amount[$i]."
-	FROM product, customer_order WHERE product.ID = ".$_SESSION['Basket']->ID[$i];
+	SELECT MAX(customer_order.id), :ID, ROUND(OnlinePrice*:Amount, 2), :Amount
+	FROM product, customer_order WHERE product.ID = :ID";
 	$stmt = $mysql->prepare($query);
+	$stmt->bindParam(':ID', $_SESSION['Basket']->ID[$i]);
+	$stmt->bindParam(':Amount', $_SESSION['Basket']->Amount[$i]);
 	$stmt->execute();
 }
 unset($_SESSION['Basket']);
