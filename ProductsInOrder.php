@@ -5,7 +5,7 @@ if($_SESSION['login']!="Logged in"){
     header("Location: login.php");
     die();
 }
-$query = "SELECT product.Name, product.description, (product.OnlinePrice*orderline.quantity) AS Price  FROM orderline
+$query = "SELECT product.Name, product.description, (product.OnlinePrice*orderline.quantity) AS Price, orderline.quantity AS Ammount FROM orderline
 JOIN product ON product.ID = orderline.ProductID
 where orderline.OrderID = :ID";
 $stmt = $mysql->prepare($query);
@@ -36,6 +36,7 @@ $stmt->execute();
                         <td>Name</td>
                         <td>Description</td>
                         <td>Price</td>
+						<td>Ammount</td>
                     </thead>
 
                     <tbody?>
@@ -44,6 +45,7 @@ $stmt->execute();
                                 <td><?php echo $result['Name']; ?></td>
                                 <td><?php echo $result['description']; ?></td>
                                 <td><?php echo "&pound;".$result['Price']; ?></td>
+								<td><?php echo $result['Ammount']; ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
