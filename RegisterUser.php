@@ -2,7 +2,7 @@
 
 include 'connect.php';
 
-$query = "SELECT username from UserAccount WHERE username = :Username";
+$query = "USE 17ac3d07; SELECT username from UserAccount WHERE username = :Username";
 $stmt = $mysql->prepare($query);
 $stmt->bindParam(':Username', $_POST['Username']);
 $stmt->execute();

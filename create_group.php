@@ -4,7 +4,7 @@ $permissions = array(
 );
 include "check-authorisation.php";
 include "connect.php";
-$stmt = $mysql->prepare("SELECT * FROM permission");
+$stmt = $mysql->prepare("USE 17ac3d07; SELECT * FROM permission");
 $stmt->execute();
 $permissionResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'): {
     foreach($_POST as $key=>$value){
         if(substr($key, 0, 11) == "permission-" && $value != -1){
             $permissionID = ltrim($key, "permission-");
-            $stmt = $mysql->prepare("INSERT INTO usergrouppermission (UserGroupID, PermissionID, AccessLevel) values (:groupID, :permissionID, :accessLevel);");
+            $stmt = $mysql->prepare("USE 17ac3d07; INSERT INTO usergrouppermission (UserGroupID, PermissionID, AccessLevel) values (:groupID, :permissionID, :accessLevel);");
             $stmt->bindValue(":groupID", $groupID, PDO::PARAM_INT);
             $stmt->bindValue(":permissionID", $permissionID, PDO::PARAM_INT);
             $stmt->bindValue(":accessLevel", $value, PDO::PARAM_INT);

@@ -7,7 +7,7 @@ $permissions = array(
 );
 include 'check-authorisation.php';
 if(isset($_POST['ProductID'])){
-	$query="INSERT INTO BranchProduct(BranchID, ProductId, Stock, StorePrice) VALUES(".$_GET['BranchID'].", 
+	$query="USE 17ac3d07; INSERT INTO BranchProduct(BranchID, ProductId, Stock, StorePrice) VALUES(".$_GET['BranchID'].", 
 	".$_POST['ProductID'].", ".$_POST['Stock'].", ".$_POST['StorePrice'].")";
 	$stmt=$mysql->prepare($query);
 	$stmt->execute();

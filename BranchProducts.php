@@ -3,7 +3,8 @@ include 'connect.php';
 $permissions = array(
     "product"=>1
 );
-$query = "SELECT product.*, branchproduct.Stock FROM product
+$query = "USE 17ac3d07;
+SELECT product.*, branchproduct.Stock FROM product
 JOIN branchproduct ON product.ID = branchproduct.ProductID WHERE BranchID= :branchID";
 $stmt = $mysql->prepare($query);
 $stmt->bindParam(':branchID', $_GET['branchID']);

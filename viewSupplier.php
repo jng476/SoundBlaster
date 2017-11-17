@@ -6,7 +6,7 @@ $permissions = array(
     "product"=>1
 );
 include 'check-authorisation.php';
-$query = "SELECT Name, Description, SupplierCost FROM Product WHERE SupplierID = ".$_GET['supplierID'];
+$query = "USE 17ac3d07; SELECT Name, Description, SupplierCost FROM Product WHERE SupplierID = ".$_GET['supplierID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 

@@ -6,7 +6,7 @@ if($_SESSION['login']!="Logged in"){
     header("Location: login.php");
     die();
 }
-$query = "SELECT customer.*, GROUP_CONCAT(address.Line1, address.Line2) AS Address FROM customer
+$query = "USE 17ac3d07; SELECT customer.*, GROUP_CONCAT(address.Line1, address.Line2) AS Address FROM customer
 JOIN address ON address.ID = customer.AddressID WHERE customer.ID = ".$_GET['ID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();

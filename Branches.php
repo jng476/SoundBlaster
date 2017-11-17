@@ -6,7 +6,8 @@ $permissions = array(
     "branch"=>0
 );
 include 'check-authorisation.php';
-$query = "SELECT * FROM branch";
+$query = "USE 17ac3d07;
+SELECT * FROM branch";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 

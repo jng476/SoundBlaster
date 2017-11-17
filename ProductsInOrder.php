@@ -5,7 +5,7 @@ if($_SESSION['login']!="Logged in"){
     header("Location: login.php");
     die();
 }
-$query = "SELECT product.Name, product.description, (product.OnlinePrice*orderline.quantity) AS Price, orderline.quantity AS Ammount FROM orderline
+$query = "USE 17ac3d07; SELECT product.Name, product.description, (product.OnlinePrice*orderline.quantity) AS Price, orderline.quantity AS Ammount FROM orderline
 JOIN product ON product.ID = orderline.ProductID
 where orderline.OrderID = :ID";
 $stmt = $mysql->prepare($query);

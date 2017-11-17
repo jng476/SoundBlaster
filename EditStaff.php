@@ -6,7 +6,7 @@ $permissions = array(
 );
 include 'check-authorisation.php';
 
-$query = "SELECT staff.* FROM staff ";
+$query = "USE 17ac3d07; SELECT staff.* FROM staff ";
 if(isset($_GET['ID'])){
     $query = $query."where staff.ID = :id";
 }
