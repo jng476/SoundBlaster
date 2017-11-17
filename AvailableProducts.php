@@ -4,7 +4,7 @@ $permissions = array(
     "product"=>"1"
 );
 include 'check-authorisation.php';
-$query = "USE 17ac3d07; SELECT* FROM product";
+$query = "SELECT* FROM product";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 
