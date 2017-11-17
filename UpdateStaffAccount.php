@@ -17,8 +17,7 @@ if(!isset($_POST['ID'])){
 	$ID = $ID.$POST['ID'];
 	
 }
-$query = "USE 17ac3d07;
-SET SQL_SAFE_UPDATES = 0;
+$query = "SET SQL_SAFE_UPDATES = 0;
 UPDATE staff
 SET DepartmentID = :Department, BranchID = :BranchID, IsManager = :IsManager
 WHERE ID = ".$ID;

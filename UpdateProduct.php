@@ -23,7 +23,7 @@ UPDATE product
 SET SupplierID = ".$Supplier.", CategoryID = ".$Category.", Description = :Description, Name = :Name, Brand = :Brand, SupplierCost = ".$SupplierPrice.", OnlinePrice = ".$OnlinePrice.", Available = :Available
 WHERE ID = ".$ID;
 }else{
-$query = "USE 17ac3d07; INSERT INTO product(SupplierID, Description, CategoryID, Name, Brand, SupplierCost, OnlinePrice, Available)
+$query = "INSERT INTO product(SupplierID, Description, CategoryID, Name, Brand, SupplierCost, OnlinePrice, Available)
 VALUES(".$Supplier.", :Description, ".$Category.", :Name, :Brand, ". $SupplierPrice.", ".$OnlinePrice.", :Available)";
 }
 $stmt = $mysql->prepare($query);

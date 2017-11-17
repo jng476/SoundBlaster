@@ -5,7 +5,7 @@ $permissions = array(
     "supplier"=>1
 );
 include 'check-authorisation.php';
-$query = "USE 17ac3d07; SELECT * FROM Supplier";
+$query = "SELECT * FROM Supplier";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 ?>

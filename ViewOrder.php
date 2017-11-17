@@ -5,7 +5,7 @@ if($_SESSION['login']!="Logged in"){
     header("Location: login.php");
     die();
 }
-$query = "USE 17ac3d07; SELECT customer_order.ID, address.Line1, address.line2, customer_order.status, customer_order.date, ROUND(SUM(orderline.price), 2) AS price, customer_order.trackingID  FROM customer_order
+$query = "SELECT customer_order.ID, address.Line1, address.line2, customer_order.status, customer_order.date, ROUND(SUM(orderline.price), 2) AS price, customer_order.trackingID  FROM customer_order
 JOIN orderline ON customer_order.ID = orderline.OrderID
 JOIN address ON customer_order.AddressID = address.id
 where customerid = (SELECT useraccount.customerid from useraccount where username = :Username)

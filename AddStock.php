@@ -4,8 +4,7 @@ $permissions = array(
     "product"=>3
 );
 include 'check-authorisation.php';
-$query = "USE 17ac3d07;
-SELECT product.ID FROM product ORDER BY product.ID";
+$query = "SELECT product.ID FROM product ORDER BY product.ID";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 

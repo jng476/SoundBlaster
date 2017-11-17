@@ -4,7 +4,7 @@ $permissions = array(
     "staff"=>1
 );
 include 'check-authorisation.php';
-$query = "USE 17ac3d07; SELECT staff.*, Department.Name AS Dep FROM staff
+$query = "SELECT staff.*, Department.Name AS Dep FROM staff
 INNER JOIN Department ON staff.DepartmentID = Department.ID WHERE BranchID = :branchID";
 $stmt = $mysql->prepare($query);
 $stmt->bindParam(':branchID', $_GET['branchID']);

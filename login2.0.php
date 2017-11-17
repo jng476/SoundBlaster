@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 
-$prepared = $mysql->prepare('USE 17ac3d07; SELECT * FROM useraccount where username= :username AND password = :password');
+$prepared = $mysql->prepare('SELECT * FROM useraccount where username= :username AND password = :password');
 $prepared->bindParam(':username', $_POST['username']);
 $prepared->bindParam(':password', $_POST['password']);
 $prepared->execute();
@@ -17,7 +17,7 @@ if ($prepared->rowCount() != 0) {
         $_SESSION['user_type'] = "customer";
     if(isset($user['SupplierID']))
         $_SESSION['user_type'] = "supplier";
-    $prepPermissions = $mysql->prepare('USE 17ac3d07; select p.`Name`, uap.`AccessLevel` from useraccountpermission as uap join permission as p on uap.PermissionID = p.
+    $prepPermissions = $mysql->prepare('select p.`Name`, uap.`AccessLevel` from useraccountpermission as uap join permission as p on uap.PermissionID = p.
 ID join useraccount as ua on uap.UserAccountID = ua.ID where ua.username=:username;');
     $prepPermissions->bindParam(':username', $_POST['username']);
     $prepPermissions->execute();
@@ -27,7 +27,7 @@ ID join useraccount as ua on uap.UserAccountID = ua.ID where ua.username=:userna
         $_SESSION['permissions'][$row['Name']] = $row['AccessLevel'];
     }
 
-    $prepGroupPermissions=$mysql->prepare('USE 17ac3d07; select p.`Name`, ugp.`AccessLevel` from permission as p join usergrouppermission as ugp on p.ID = ugp.PermissionID join usergroupaccount as uga on uga.UserGroupID=ugp.UserGroupID join useraccount as ua on uga.UserAccountID = ua.ID where ua.username=:username;');
+    $prepGroupPermissions=$mysql->prepare('select p.`Name`, ugp.`AccessLevel` from permission as p join usergrouppermission as ugp on p.ID = ugp.PermissionID join usergroupaccount as uga on uga.UserGroupID=ugp.UserGroupID join useraccount as ua on uga.UserAccountID = ua.ID where ua.username=:username;');
     $prepGroupPermissions->bindParam(':username', $_POST['username']);
     $prepGroupPermissions->execute();
     $prepGroupResult = $prepGroupPermissions -> fetchAll(PDO::FETCH_ASSOC);

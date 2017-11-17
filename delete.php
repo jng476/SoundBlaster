@@ -4,7 +4,7 @@ $permissions = array(
 );
 include 'check-authorisation.php';
 include 'connect.php';
-$stmt = $mysql->prepare("USE 17ac3d07; DELETE FROM ".$_POST['table']." WHERE ID = :id");
+$stmt = $mysql->prepare("DELETE FROM ".$_POST['table']." WHERE ID = :id");
 $stmt->bindValue(':id', $_POST['id']);
 if ($stmt->execute())
     echo "YASS";

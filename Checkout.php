@@ -22,8 +22,7 @@ if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
 	die();
 }
-$query = "USE 17ac3d07;
-INSERT INTO customer_order(addressID, CustomerID, status, date, TrackingId)
+$query = "INSERT INTO customer_order(addressID, CustomerID, status, date, TrackingId)
 SELECT customer.addressID, customerID, 'pending', CURDATE(), :TrackingId from useraccount 
 JOIN customer on customerID = customer.ID
 Where useraccount.username = :username";
@@ -33,8 +32,7 @@ $stmt->bindParam(':username', $_SESSION['username']);
 $stmt->execute();
 for($i =0; $i<$_SESSION['Basket']->index; $i++){
 	
-	$query = "USE 17ac3d07;
-	INSERT into orderline(OrderID, ProductID, price, quantity)
+	$query = "INSERT into orderline(OrderID, ProductID, price, quantity)
 	SELECT MAX(customer_order.id), ".$_SESSION['Basket']->ID[$i].", ROUND(OnlinePrice*".$_SESSION['Basket']->amount[$i].", 2), ".$_SESSION['Basket']->amount[$i]."
 	FROM product, customer_order WHERE product.ID = ".$_SESSION['Basket']->ID[$i];
 	$stmt = $mysql->prepare($query);

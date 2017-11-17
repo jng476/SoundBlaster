@@ -4,7 +4,7 @@ $permissions = array(
     "product"=>3
 );
 include 'check-authorisation.php';
-$query = "USE 17ac3d07; SELECT product.* FROM product ";
+$query = "SELECT product.* FROM product ";
 if(isset($_GET['ID'])){
     $query = $query."where product.ID = :id";
 }

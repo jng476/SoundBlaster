@@ -30,7 +30,7 @@ if (isset($_GET['priceSort'])){
     }
 }
 
-$query = "USE 17ac3d07; SELECT product.ID, product.Name, product.Description, product.Brand, product.OnlinePrice, category.name AS Cat FROM product
+$query = "SELECT product.ID, product.Name, product.Description, product.Brand, product.OnlinePrice, category.name AS Cat FROM product
 INNER JOIN category on category.ID = product.categoryID $where";
 $stmt = $mysql->prepare($query);
 $result=$stmt->execute(); ?>
