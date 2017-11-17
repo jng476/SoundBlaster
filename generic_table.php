@@ -73,19 +73,24 @@ for ($i=0 ; $i < $stmt -> columnCount(); $i++) {
             </div>
 
 <div class="row" style="margin-top:5%">
-    <div class="table-container">
+    <div class="table-container" style="width:80%">
         <?php if($can_create){
             echo '<button type="button" data-toggle="modal" data-target="#addModal" class="btn btn-success" style="width: 100%">Create '.$prettyName.'</button>';
             include "$create_page";
         }
         ?>
-        <div class="row table-container col-md-12">
+        <div class="row table-container">
            
-            <table class="table table-hover table-responsive col-md-12">
+            <table class="table table-hover table-responsive" style="margin-bottom:0px" >
                 <thead>
                     <tr>
-                        <?php foreach ($tableColumns as $column): ?>
-                            <th class="col-md-2 text-center"><?php echo $column ?></th>
+                        <?php foreach ($tableColumns as $column):
+                        if($column == 'ID'):
+                        ?>
+                            <th class="col-md-1 text-center"><?php echo $column ?></th>
+                            <?php else: ?>
+                            <th class="col-md-6 text-center"><?php echo $column ?></th>
+                            <?php endif ?>
                         <?php endforeach;
                         if($can_delete) echo '<th></th>'; ?>
                     </tr>
@@ -96,7 +101,7 @@ for ($i=0 ; $i < $stmt -> columnCount(); $i++) {
                     if (count($paginatedRows) == 0){ echo '<tr><td class="align-center" colspan=5>No Results</td></tr>';}
                     foreach ($paginatedRows as $row):
                     ?>
-                        <tr>
+                        <tr id="<?php $row["ID"] ?>">
                             <?php foreach ($tableColumns as $column): ?>
                                 <td class="text-center"><?php echo $row[$column] ?></td>
                             <?php endforeach; ?>

@@ -12,7 +12,7 @@ include 'connect.php';
         <?php include 'scripts.html' ?>
     </head>
     <body>
-        <?php
+        <?php 
         include "navigation.php";
         $prettyName="User Group";
         $query="SELECT * FROM usergroup as ug";

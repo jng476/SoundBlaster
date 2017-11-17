@@ -51,7 +51,7 @@ if(isset($_GET['searchName']))
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a class="nav-link" href="Branches.php">Branches</a></li>
-                            <br/>
+                            <li><a class="nav-link" href="groups.php">Groups</a></li>
                             <li><a class="nav-link" href="Supplier.php">Suppliers</a></li>
 							<li><a class="nav-link" href="AvailableProducts.php"> Available Products</a></li>
                         </ul>
