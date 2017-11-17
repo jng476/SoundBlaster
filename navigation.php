@@ -47,6 +47,7 @@ if(isset($_GET['searchName']))
                             <li><a class="nav-link" href="Branches.php">Branches</a></li>
                             <br/>
                             <li><a class="nav-link" href="Supplier.php">Suppliers</a></li>
+							<li><a class="nav-link" href="AvailableProducts.php"> Available Products</a></li>
                         </ul>
                     </li>
                 <?php endif ?>
