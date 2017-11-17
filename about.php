@@ -3,10 +3,9 @@
 		<title>SoundBlaster About</title>
 		<?php include 'scripts.html'?>
 	</head>
-	<body>
-		<div id="nav">
+	<body>		
  				<?php include 'navigation.php'; ?>
-		</div>	
+		
 		<div id="container">
 			<div id="content">
 				<div id="main">					
