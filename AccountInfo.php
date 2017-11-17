@@ -6,12 +6,14 @@ if($_SESSION['login']!="Logged in"){
 	die();
 }
 if($_SESSION['user_type'] == "customer"){
-$query = "SELECT customer.*, address.LINE1, address.LINE2, address.PostCode, address.Country, address.City, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM customer 
+$query = "USE 17ac3d07;
+SELECT customer.*, address.LINE1, address.LINE2, address.PostCode, address.Country, address.City, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM customer 
 JOIN useraccount on useraccount.customerid = customer.id
 INNER JOIN address on address.ID = customer.AddressID 
 where username = :Username";
 }else{
-	$query = "SELECT staff.*, address.LINE1, address.LINE2, address.PostCode, address.Country, address.City, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM staff
+	$query = "USE 17ac3d07;
+	SELECT staff.*, address.LINE1, address.LINE2, address.PostCode, address.Country, address.City, GROUP_CONCAT(address.LINE1, address.LINE2) AS Address FROM staff
 JOIN useraccount on useraccount.staffid = staff.id
 INNER JOIN address on address.ID = staff.AddressID 
 where username = :Username";
