@@ -66,14 +66,17 @@ if(isset($_GET['searchName']))
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="AccountInfo.php">Account Details</a></li>
-                            <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){
+							<?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'supplier'){
+								echo '<li><a class="nav-link" href="AccountInfo.php">Account Details</a></li>' ; } ?>
+							
+                            <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff' && $_SESSION['user_type'] != 'supplier' ){
                                 echo '<li><a class="nav-link" href="viewOrder.php">Orders</a></li>'; } ?>
                             <li><a class="nav-link" href="logout.php">Logout</a></li>
 
                         </ul>
                     </li>
                 <?php } ?>
+				<?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){ ?>
                 <li class="nav-item">
                     <form class="navbar-form navbar-left">
                         <div class="input-group">
@@ -86,6 +89,7 @@ if(isset($_GET['searchName']))
                         </div>
                     </form>
                 </li>
+				 <?php } ?>
             </ul>
         </div>
     </div>

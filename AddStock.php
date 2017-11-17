@@ -4,7 +4,7 @@ $permissions = array(
     "product"=>3
 );
 include 'check-authorisation.php';
-$query = "SELECT product.ID FROM product ORDER BY product.ID";
+$query = "SELECT * FROM add_stock_view";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 

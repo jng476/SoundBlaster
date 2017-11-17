@@ -6,7 +6,7 @@ $permissions = array(
     "branch"=>0
 );
 include 'check-authorisation.php';
-$query = "SELECT * FROM branch";
+$query = "SELECT * FROM branchView";
 $stmt = $mysql->prepare($query);
 $stmt->execute();
 

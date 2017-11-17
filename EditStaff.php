@@ -6,7 +6,7 @@ $permissions = array(
 );
 include 'check-authorisation.php';
 
-$query = "SELECT staff.* FROM staff ";
+$query = "SELECT * From viewStaff_View ";
 if(isset($_GET['ID'])){
     $query = $query."where staff.ID = :id";
 }
