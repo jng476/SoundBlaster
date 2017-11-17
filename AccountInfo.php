@@ -20,7 +20,7 @@ $stmt = $mysql->prepare($query);
 $stmt->bindParam(':Username', $_SESSION['username']);
 $stmt->execute();
 ?> 
-
+<!DOCTYPE html>
 <html>
 	<head>
 		 <title>User Accounts</title>		

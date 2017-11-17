@@ -9,7 +9,7 @@ $stmt = $mysql->prepare($query);
 $stmt->execute();
 
 ?> 
-
+<!DOCTYPE html>
 <html>
 	<head>
 		 <title>Available Products</title>		
@@ -18,15 +18,14 @@ $stmt->execute();
 		
 	</head>
 	<body>
-		
+		<?php include 'navigation.php'; ?>
 				
 				
 		<div id="container">
 						
-			<div id="nav">
- 				<?php include 'navigation.php'; ?>
-			</div>
-			
+		
+ 				
+		
 			
 			<div id="content">
 				

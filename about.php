@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>SoundBlaster About</title>
 		<?php include 'scripts.html'?>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
 	</head>
 	<body>		
  				<?php include 'navigation.php'; ?>
