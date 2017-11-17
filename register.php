@@ -55,6 +55,10 @@
                                             <label>City</label>
                                             <input type="text" placeholder="Enter City Name Here.." name="City" class="form-control" required>
                                         </div>
+										<div class="col-sm-4 form-group">
+									<label>Postcode</label>
+									<input type="text" placeholder="Enter Zip Code Here.." name="PostCode" class="form-control" required>
+									</div>		
                                     </div>
                                     <div class="form-group">
                                         <label>Country</label>
