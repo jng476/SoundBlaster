@@ -3,7 +3,7 @@
 include 'connect.php';
 
 $permissions = array(
-    "branch"=>"0"
+    "branch"=>0
 );
 include 'check-authorisation.php';
 $query = "SELECT * FROM branch";
