@@ -41,7 +41,7 @@ $stmt->execute();
 						<table id="basketTable">
 						<thead>
 						<td>ID</td>
-						<td>Name</td>
+						<td>AddressID</td>
 						<td>Phone</td>
 						<td>Email</td>
 						</thead>
