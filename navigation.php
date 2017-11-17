@@ -20,6 +20,8 @@ if(isset($_GET['searchName']))
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+				
+ <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){ ?>
                 <li class="dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Shop<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -28,17 +30,21 @@ if(isset($_GET['searchName']))
                         echo '<li><a class="nav-link" href="searchTable.php?id=&supplier=&category='.$category['ID'].'&name=&brand=&price=">'.ucfirst($category['Name']).'</a></li>'; ?>
                     </ul>
                 </li>
+ <?php } ?>
+				
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact_us.php">Contact</a>
                 </li>
+				
                 <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){
                     echo '<li class="nav-item">
-              <a class="nav-link" href="viewBasket.php">My Basket</a>
-            </li>
-                     '; } ?>
+						<a class="nav-link" href="viewBasket.php">My Basket</a>
+						</li> '; } ?>
+						
+						
                 <?php if(isset($_SESSION['permissions']['admin'])): ?>
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Admin
