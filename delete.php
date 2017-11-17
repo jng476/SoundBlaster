@@ -1,5 +1,8 @@
 <?php
-include 'check_authorisation';
+$permissions = array(
+    "product"=>3
+);
+include 'check-authorisation.php';
 include 'connect.php';
 $stmt = $mysql->prepare("DELETE FROM ".$_POST['table']." WHERE ID = :id");
 $stmt->bindValue(':id', $_POST['id']);

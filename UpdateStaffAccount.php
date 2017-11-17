@@ -2,10 +2,10 @@
 
 include 'connect.php';
 
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-} 
+$permissions = array(
+    "staff"=>3
+);
+include 'check-authorisation.php'; 
 $ID = "";
 $Department = $_POST['Department'];
 $BranchID = $_POST['BranchID'];

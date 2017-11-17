@@ -2,10 +2,10 @@
 
 include 'connect.php';
 
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-} 
+$permissions = array(
+    "product"=>3
+);
+include 'check-authorisation.php';
 if(isset($_POST['ProductID'])){
 	$query="INSERT INTO BranchProduct(BranchID, ProductId, Stock, StorePrice) VALUES(".$_GET['BranchID'].", 
 	".$_POST['ProductID'].", ".$_POST['Stock'].", ".$_POST['StorePrice'].")";

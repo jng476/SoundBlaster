@@ -1,6 +1,8 @@
 
 <?php
-#$permissions = array();
+$permissions = array(
+    "staff"=>1
+);
 include 'check-authorisation.php';
 include 'connect.php';
 ?>

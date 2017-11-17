@@ -1,10 +1,10 @@
 <?php 
 // https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewSupplier.php?supplierID=1 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+$permissions = array(
+    "supplier"=>1
+);
+include 'check-authorisation.php';
 $query = "SELECT * FROM Supplier";
 $stmt = $mysql->prepare($query);
 $stmt->execute();

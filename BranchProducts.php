@@ -1,9 +1,8 @@
 <?php 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+$permissions = array(
+    "product"=>1
+);
 $query = "SELECT product.*, branchproduct.Stock FROM product 
 JOIN branchproduct ON product.ID = branchproduct.ProductID WHERE BranchID= :branchID";
 $stmt = $mysql->prepare($query);
