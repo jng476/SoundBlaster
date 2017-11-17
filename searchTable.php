@@ -1,42 +1,31 @@
 <?php
-
 include 'connect.php';
 if($_SESSION['login']!="Logged in"){
     header("Location: login.php");
     die();
 }
-
 $where = "WHERE ";
 if (isset($_GET['id'])){
     if($_GET['id'] != ''){
         $where = $where."product.id = ".$_GET['id']." AND ";
     }
     if($_GET['category'] != ''){
-
         $where = $where." category.ID = ".$_GET['category']." AND ";
     }
     if($_GET['name'] != ''){
-
         $where = $where." product.Name LIKE '%".$_GET['name']."%' AND ";
     }
     if($_GET['brand'] != ''){
-
         $where = $where." product.Brand LIKE '%".$_GET['brand']."%' AND ";
     }
     if($_GET['price'] != ''){
-
         $where = $where." product.OnlinePrice <= ".$_GET['price']." AND ";
     }
-
-
-
 }
-
 $where = $where."Available = 'Yes' ";
 
 if (isset($_GET['priceSort'])){
     if($_GET['priceSort'] == 'Yes'){
-
         $where = $where."ORDER BY product.OnlinePrice";
     }
 }
@@ -45,7 +34,7 @@ $query = "SELECT product.ID, product.Name, product.Description, product.Brand, p
 INNER JOIN category on category.ID = product.categoryID $where";
 $stmt = $mysql->prepare($query);
 $result=$stmt->execute(); ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Search Table</title>

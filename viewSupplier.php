@@ -11,32 +11,19 @@ $stmt = $mysql->prepare($query);
 $stmt->execute();
 
 ?> 
-
+<!DOCTYPE html>
 <html>
 	<head>
 		 <title>Products</title>		
 		<?php include 'scripts.html'?>
-
-		
 	</head>
 	<body>
-		
-				
-				
-		<div id="container">
-						
-			<div id="nav">
  				<?php include 'navigation.php'; ?>
-			</div>
-			
-			
+		<div id="container">
 			<div id="content">
-				
-				
 				<div id="main">
-					</br>
-					</br>
-					
+		</br>
+		</br>
 					<div id="bubbleText">
 					<table>
 					<thead>
@@ -48,8 +35,7 @@ $stmt->execute();
 						<td>Description</td>
 						<td>Supplier Price</td>
 						</thead>
-		
-						<tbody?>
+						<tbody>
 						<?php foreach($stmt->fetchAll() as $result): ?>
 							<tr>
 							<td><?php echo $result['Name']; ?></td>
