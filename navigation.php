@@ -1,4 +1,3 @@
-
 <?php
 include "connect.php";
 $cats = $mysql->prepare('SELECT ID, Name FROM category;');
@@ -50,36 +49,36 @@ if(isset($_GET['searchName']))
                             <li><a class="nav-link" href="Supplier.php">Suppliers</a></li>
                         </ul>
                     </li>
-		    <?php endif ?>
-                    <?php if(!isset($_SESSION['login'])){ ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Login</a>
-                        </li>
-                    <?php } else{ ?>
-                        <li class="dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account
-                                <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="AccountInfo.php">Account Details</a></li>
-                                <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){
-                                    echo '<li><a class="nav-link" href="viewOrder.php">Orders</a></li>'; } ?>
-                                <li><a class="nav-link" href="logout.php">Logout</a></li>
-
-                            </ul>
-                        </li>
-                    <?php } ?>
+                <?php endif ?>
+                <?php if(!isset($_SESSION['login'])){ ?>
                     <li class="nav-item">
-                        <form class="navbar-form navbar-left">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="searchName" method="get" placeholder="Search">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                        <a class="nav-link" href="login.php">Login</a>
                     </li>
+                <?php } else{ ?>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Account
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="AccountInfo.php">Account Details</a></li>
+                            <?php if(!isset($_SESSION['user_type']) || $_SESSION['user_type'] != 'staff'){
+                                echo '<li><a class="nav-link" href="viewOrder.php">Orders</a></li>'; } ?>
+                            <li><a class="nav-link" href="logout.php">Logout</a></li>
+
+                        </ul>
+                    </li>
+                <?php } ?>
+                <li class="nav-item">
+                    <form class="navbar-form navbar-left">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="searchName" method="get" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
