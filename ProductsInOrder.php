@@ -7,8 +7,9 @@ if($_SESSION['login']!="Logged in"){
 }
 $query = "SELECT product.Name, product.description, (product.OnlinePrice*orderline.quantity) AS Price  FROM orderline
 JOIN product ON product.ID = orderline.ProductID
-where orderline.OrderID = ".$_GET['ID'];
+where orderline.OrderID = :ID";
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':ID', $_GET['ID']);
 $stmt->execute();
 
 ?> 

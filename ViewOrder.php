@@ -8,9 +8,10 @@ if($_SESSION['login']!="Logged in"){
 $query = "SELECT customer_order.ID, address.Line1, address.line2, customer_order.status, customer_order.date, ROUND(SUM(orderline.price), 2) AS price, customer_order.trackingID  FROM customer_order
 JOIN orderline ON customer_order.ID = orderline.OrderID
 JOIN address ON customer_order.AddressID = address.id
-where customerid = (SELECT useraccount.customerid from useraccount where username = '".$_SESSION['username']."')
+where customerid = (SELECT useraccount.customerid from useraccount where username = :Username)
 GROUP BY customer_order.ID";
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':Username', $_SESSION['username']);
 $stmt->execute();
 
 ?> 

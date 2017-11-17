@@ -12,11 +12,20 @@ $query = "SET SQL_SAFE_UPDATES = 0;
 UPDATE customer
 JOIN address ON address.ID = customer.AddressID
 JOIN useraccount ON useraccount.customerID = customer.ID
-SET FirstName = '".$_POST['FirstName']."', LastName = '".$_POST['LastName']."', Email = '".$_POST['Email']."', 
-LINE1 = '".$_POST['Line1']."', LINE2 = '".$_POST['Line2']."', PostCode = '".$_POST['PostCode']."', City = '".$_POST['City']."', Country = '".$_POST['Country']."'
-WHERE useraccount.username = '".$_SESSION['username']."'";
+SET FirstName = :FirstName, LastName = :LastName, Email = :Email, 
+LINE1 = :Line1, LINE2 = :Line2, PostCode = :PostCode, City = :City, Country = :Country
+WHERE useraccount.username = :Username";
 
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':Line1', $_POST['Line1']);
+$stmt->bindParam(':Line2', $_POST['Line2']);
+$stmt->bindParam(':City', $_POST['City']);
+$stmt->bindParam(':PostCode', $_POST['PostCode']);
+$stmt->bindParam(':Country', $_POST['Country']);
+$stmt->bindParam(':FirstName', $_POST['FirstName']);
+$stmt->bindParam(':LastName', $_POST['LastName']);
+$stmt->bindParam(':Email', $_POST['Email']);
+$stmt->bindParam(':Username', $_SESSION['username']);
 $stmt->execute();
 header("Location: AccountInfo.php");
 die();

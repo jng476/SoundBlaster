@@ -19,10 +19,13 @@ if(!isset($_POST['ID'])){
 }
 $query = "SET SQL_SAFE_UPDATES = 0;
 UPDATE staff
-SET DepartmentID = ".$Department.", BranchID = ".$BranchID.", IsManager = ".$IsManager."
+SET DepartmentID = :Department, BranchID = :BranchID, IsManager = :IsManager
 WHERE ID = ".$ID;
 
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':Department', $Department);
+$stmt->bindParam(':BranchID', $BranchID);
+$stmt->bindParam(':IsManager', $IsManager);
 $stmt->execute();
 header("Location: Employee.php?branchID=".$_POST['BranchID']);
 die();

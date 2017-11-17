@@ -1,5 +1,4 @@
 <?php 
-// https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewSupplier.php?supplierID=1 
 include 'connect.php';
 if($_SESSION['login']!="Logged in"){
 	header("Location: login.php");
@@ -7,9 +6,10 @@ if($_SESSION['login']!="Logged in"){
 }
 $query = "SELECT staff.* FROM staff ";
 if(isset($_GET['ID'])){
-$query = $query."where staff.ID = ".$_GET['ID'];
+$query = $query."where staff.ID = :id";
 }
 $stmt = $mysql->prepare($query);
+$stmt->bindParam(':id', $_GET['ID']);
 $stmt->execute();
 ?> 
 

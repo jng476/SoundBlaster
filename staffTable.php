@@ -13,8 +13,8 @@ include 'connect.php';
     <body>
         <?php
         include "navigation.php";
-        $query="SELECT s.ID, s.FirstName as 'First Name', s.LastName as 'Last Name', d.Name as 'Department Name' FROM STAFF as s JOIN department as d on d.ID = s.DepartmentID ORDER BY s.ID";
-        #$query=$query="SELECT ID, FirstName as First Name, Last Name as Surname,  FROM STAFF join on ";
+        $query="SELECT s.ID, s.FirstName as 'First Name', s.LastName as 'Last Name', 
+		d.Name as 'Department Name' FROM STAFF as s JOIN department as d on d.ID = s.DepartmentID ORDER BY s.ID";
         $table="STAFF";
         $tablePermission="staff";
         $create_page="add_staff.php";
