@@ -32,7 +32,7 @@ if (isset($_GET['id'])){
 
 }
 
-$where = $where."TRUE = TRUE ";
+$where = $where."Available = 'Yes' ";
 
 if (isset($_GET['priceSort'])){
     if($_GET['priceSort'] == 'Yes'){
