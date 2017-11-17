@@ -1,9 +1,11 @@
 <?php 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+
+$permissions = array(
+    "staff"=>2
+);
+include 'check-authorisation.php';
+
 $query = "SELECT staff.* FROM staff ";
 if(isset($_GET['ID'])){
 $query = $query."where staff.ID = :id";

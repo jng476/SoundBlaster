@@ -1,9 +1,9 @@
 <?php 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+$permissions = array(
+    "product"=>3
+);
+include 'check-authorisation.php';
 $query = "SELECT product.* FROM product ";
 if(isset($_GET['ID'])){
 $query = $query."where product.ID = :id";

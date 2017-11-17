@@ -1,9 +1,9 @@
 <?php 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+$permissions = array(
+    "staff"=>1
+);
+include 'check-authorisation.php';
 $query = "SELECT staff.*, Department.Name AS Dep FROM staff 
 INNER JOIN Department ON staff.DepartmentID = Department.ID WHERE BranchID = :branchID";
 $stmt = $mysql->prepare($query);

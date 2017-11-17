@@ -2,10 +2,10 @@
 // https://zeno.computing.dundee.ac.uk/2017-ac32006/joshng/viewSupplier.php?supplierID=1 
 // link above for the get. 
 include 'connect.php';
-if($_SESSION['login']!="Logged in"){
-	header("Location: login.php");
-	die();
-}
+$permissions = array(
+    "product"=>1
+);
+include 'check-authorisation.php';
 $query = "SELECT Name, Description, SupplierCost FROM Product WHERE SupplierID = ".$_GET['supplierID'];
 $stmt = $mysql->prepare($query);
 $stmt->execute();
